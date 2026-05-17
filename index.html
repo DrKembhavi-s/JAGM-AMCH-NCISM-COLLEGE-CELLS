@@ -17,6 +17,8 @@ header p{font-size:.8rem;opacity:.85;margin-top:4px}
 .tab-btn.active{background:#fff;color:#1a3a5c}
 .tab-btn.downloads-tab{background:rgba(255,200,0,.2);color:#ffe;border:1px solid rgba(255,200,0,.3)}
 .tab-btn.downloads-tab.active{background:#fefce8;color:#713f12}
+.tab-btn.sync-tab{background:rgba(100,255,180,.15);color:#cfe;border:1px solid rgba(100,255,180,.2)}
+.tab-btn.sync-tab.active{background:#f0fff4;color:#1a4731}
 .tab-panel{display:none;padding:20px;max-width:1100px;margin:0 auto}
 .tab-panel.active{display:block}
 .card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:20px;margin-bottom:18px}
@@ -33,7 +35,7 @@ th{background:#1a3a5c;color:#fff;padding:8px 10px;text-align:left;font-weight:60
 td{padding:7px 10px;border-bottom:1px solid #e2e8f0;vertical-align:middle}
 tr:hover td{background:#f7fafc}
 .fixed-row{background:#f0f7ff}
-.fixed-row td:first-child,.fixed-row .desig-cell{font-weight:600;color:#1a3a5c;font-size:.8rem}
+.fixed-row .desig-cell{font-weight:600;color:#1a3a5c;font-size:.8rem}
 .fixed-row .post-cell{color:#555;font-size:.8rem}
 .name-input{width:100%;border:1.5px solid #cbd5e0;border-radius:5px;padding:5px 9px;font-size:.83rem;font-family:inherit;background:#fff}
 .name-input:focus{outline:none;border-color:#2d6a9f}
@@ -43,6 +45,8 @@ tr:hover td{background:#f7fafc}
 .btn-success{background:#276749;color:#fff;padding:8px 18px;border:none;border-radius:7px;cursor:pointer;font-size:.82rem;font-weight:600}.btn-success:hover{background:#1c4532}
 .btn-warning{background:#c05621;color:#fff;padding:8px 18px;border:none;border-radius:7px;cursor:pointer;font-size:.82rem;font-weight:600}.btn-warning:hover{background:#7b341e}
 .btn-gold{background:#b7791f;color:#fff;padding:8px 18px;border:none;border-radius:7px;cursor:pointer;font-size:.82rem;font-weight:600}.btn-gold:hover{background:#744210}
+.btn-teal{background:#2c7a7b;color:#fff;padding:8px 18px;border:none;border-radius:7px;cursor:pointer;font-size:.82rem;font-weight:600}.btn-teal:hover{background:#1d4f50}
+.btn-purple{background:#6b46c1;color:#fff;padding:8px 18px;border:none;border-radius:7px;cursor:pointer;font-size:.82rem;font-weight:600}.btn-purple:hover{background:#44337a}
 .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 .meeting-entry{background:#f7fafc;border:1.5px solid #e2e8f0;border-radius:8px;padding:14px;margin-bottom:12px;position:relative}
 .meeting-entry h4{font-size:.82rem;font-weight:700;color:#1a3a5c;margin-bottom:10px}
@@ -62,13 +66,30 @@ tr:hover td{background:#f7fafc}
 .sig-field .sig-label{font-size:.7rem;color:#4a5568;font-weight:600}
 .extra-section{margin-top:10px;border-top:1px dashed #cbd5e0;padding-top:8px}
 .extra-label{font-size:.72rem;color:#718096;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
-/* Downloads tab */
 .dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:4px}
 .dl-card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:18px;border-left:4px solid #2d6a9f}
 .dl-card h3{font-size:.9rem;color:#1a3a5c;margin-bottom:6px}
 .dl-card p{font-size:.78rem;color:#718096;margin-bottom:12px;line-height:1.5}
 .dl-card .meta{font-size:.75rem;color:#4a5568;margin-bottom:10px}
 .dl-card .meta span{display:inline-block;background:#ebf4ff;color:#2d6a9f;border-radius:4px;padding:2px 8px;margin:2px 2px 2px 0;font-weight:600}
+/* Sync panel */
+.sync-box{background:#f0fff4;border:2px solid #9ae6b4;border-radius:10px;padding:20px;margin-bottom:18px}
+.sync-box h3{color:#1a4731;font-size:.95rem;margin-bottom:8px}
+.sync-box p{font-size:.82rem;color:#276749;line-height:1.6;margin-bottom:12px}
+.sync-steps{list-style:none;counter-reset:step}
+.sync-steps li{counter-increment:step;padding:8px 0 8px 36px;position:relative;font-size:.83rem;color:#2d3748;border-bottom:1px solid #c6f6d5}
+.sync-steps li:last-child{border-bottom:none}
+.sync-steps li::before{content:counter(step);position:absolute;left:0;top:8px;background:#276749;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.import-area{width:100%;border:2px dashed #9ae6b4;border-radius:8px;padding:12px;font-family:monospace;font-size:.75rem;min-height:100px;resize:vertical;background:#f0fff4}
+.import-area:focus{outline:none;border-color:#276749}
+.export-preview{background:#1a202c;color:#9ae6b4;border-radius:8px;padding:14px;font-family:monospace;font-size:.72rem;word-break:break-all;max-height:160px;overflow-y:auto;margin-top:10px;line-height:1.5}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:700}
+.badge-ok{background:#c6f6d5;color:#22543d}
+.badge-warn{background:#fefcbf;color:#744210}
+.badge-err{background:#fed7d7;color:#742a2a}
+.import-status{margin-top:10px;padding:10px 14px;border-radius:7px;font-size:.82rem;display:none}
+.import-status.ok{background:#c6f6d5;color:#22543d;display:block}
+.import-status.err{background:#fed7d7;color:#742a2a;display:block}
 @media print{
   #tab-bar,header,.btn-row,.btn-sm,.remove-meeting,.btn-tiny,#toast,.no-print{display:none!important}
   .tab-panel{display:block!important;padding:0;max-width:100%}
@@ -87,323 +108,52 @@ tr:hover td{background:#f7fafc}
 <div id="toast"></div>
 
 <script>
-// ── CELL REGULATORY DATA ──────────────────────────────────────────────────────
-const CELL_INFO = {
-  anti_ragging:{
-    basis:`The Anti-Ragging Cell is constituted in compliance with the Supreme Court of India directives (SLP No. 24295/2006), UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions 2009, and CCIM/NCISM guidelines for Ayurveda Medical Colleges. Section 26(1)(g) of the University Grants Commission Act, 1956 empowers UGC to frame such regulations. The Honourable Supreme Court in its judgment dated 16 May 2007 mandated all Higher Educational Institutions to constitute Anti-Ragging Committees and Squads. This cell is further mandated under the affiliating university statutes and the All India Council for Technical Education (AICTE) guidelines as applicable.`,
-    freq_default:'Quarterly (minimum 4 meetings per academic year)',
-    roles:{
-      'Chairperson':'Overall responsibility for implementation of anti-ragging policies; presides over all meetings; takes final decisions on complaints; ensures compliance with UGC/NCISM/Supreme Court directives; submits annual anti-ragging report to affiliating university.',
-      'Nodal Officer / Convener':'Coordinates day-to-day functioning of the cell; receives and registers complaints; maintains complaint register; liaises with police and district authorities; organises awareness programmes; prepares agenda and minutes of meetings.',
-      'Member (Faculty)':'Participates in inquiry committees constituted to investigate ragging complaints; assists in awareness campaigns; monitors student behaviour in campus and hostel areas; reports incidents to Nodal Officer.',
-      'Member (Administrative)':'Maintains all administrative records of the cell; assists in documentation; coordinates hostel wardens; ensures display of anti-ragging notices and helpline numbers across campus.',
-      'Warden – Boys Hostel':'Monitors boys hostel premises; reports any ragging incidents immediately; ensures seniors and juniors are sensitised at the start of each academic year; maintains hostel discipline.',
-      'Warden – Girls Hostel':'Monitors girls hostel premises; reports any ragging incidents immediately; ensures seniors and juniors are sensitised at the start of each academic year; maintains hostel discipline.',
-      'Student Representative':'Acts as peer sensitiser; reports ragging incidents observed; participates in awareness drives; assists in maintaining a ragging-free campus culture.',
-      'Member (Non-Teaching Staff)':'Reports observed incidents; assists in maintaining campus discipline; participates in awareness activities.',
-      'Member (Police Liaison)':'Provides interface with local law enforcement; assists in cases requiring police intervention; advises committee on legal procedures.',
-    }
-  },
-  icc:{
-    basis:`The Internal Complaints Committee (ICC) is constituted under Section 4 of the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (Central Act 14 of 2013). Every employer with 10 or more employees is legally mandated to constitute an ICC. This is further reinforced by NCISM Regulations 2021 and the affiliating university's statutes. The committee operates in accordance with the SH Act 2013 and the rules framed thereunder, ensuring a safe and dignified working and learning environment for all women employees and students.`,
-    freq_default:'As required (complaint-based); mandatory annual awareness meeting',
-    roles:{
-      'Presiding Officer':'Senior female employee who presides over the ICC; leads all inquiry proceedings; ensures fair and time-bound inquiry (within 90 days); submits inquiry report and recommendations to the Principal/Management; presides over awareness meetings.',
-      'Member (Internal – Female)':'Participates in inquiry proceedings; assists Presiding Officer; reviews evidence and submissions; signs inquiry report; maintains confidentiality of all proceedings.',
-      'Member (Internal)':'Supports inquiry process; provides departmental perspective; assists in maintaining records; ensures compliance with SH Act timelines.',
-      'Member (Non-Teaching – Female)':'Represents non-teaching staff perspective; participates in inquiry; assists in awareness activities for non-teaching staff.',
-      'Member (External – NGO)':'Independent member from an NGO committed to women\'s causes; provides external oversight; ensures impartiality of proceedings; guides the committee on legal and procedural matters.',
-      'Legal Expert / Advocate':'Advises the committee on legal aspects of complaints; assists in interpreting the SH Act and rules; reviews inquiry reports for legal compliance.',
-    }
-  },
-  sc_st:{
-    basis:`The SC/ST Cell is constituted in accordance with the Constitutional provisions under Articles 15, 16, 17, and 46 of the Constitution of India; the Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989; UGC guidelines for SC/ST Cells in Higher Educational Institutions; and NCISM Regulations 2021. The cell ensures equal opportunity, prevents discrimination, and facilitates the academic and personal development of students belonging to Scheduled Castes and Scheduled Tribes categories, in line with the National Policy for Weaker Sections.`,
-    freq_default:'Biannual (minimum 2 meetings per academic year)',
-    roles:{
-      'Chairperson':'Overall responsibility for SC/ST Cell functioning; ensures non-discrimination policies are implemented; reviews grievances escalated to the principal level; presides over annual review meeting.',
-      'Liaison Officer / Convener':'Primary point of contact for SC/ST students; receives and addresses grievances; maintains grievance register; coordinates scholarship and welfare schemes; liaises with State SC/ST Department; prepares annual report.',
-      'Member (Faculty)':'Mentors SC/ST students academically; reports discriminatory incidents; participates in awareness activities; assists Liaison Officer in grievance redressal.',
-      'Member (Administrative)':'Maintains records of SC/ST students; assists in scholarship documentation; ensures fee concession benefits are properly administered.',
-      'Student Representative':'Bridges communication between SC/ST students and cell; brings forward concerns of peers; participates in orientation programmes for new students.',
-      'Member (Non-Teaching Staff)':'Supports cell activities; reports observed incidents of discrimination; participates in sensitisation programmes.',
-    }
-  },
-  grievance:{
-    basis:`The Student Grievance Redressal Cell is constituted in compliance with UGC (Redressal of Grievances of Students) Regulations 2019, NCISM Regulations 2021, and the affiliating university's student welfare statutes. These regulations mandate every Higher Educational Institution to establish a mechanism for fair and time-bound redressal of student grievances related to academics, examinations, admissions, hostel facilities, and other institutional matters. The cell operates transparently and ensures that no student suffers on account of raising a legitimate grievance.`,
-    freq_default:'Monthly (minimum 12 meetings per academic year)',
-    roles:{
-      'Chairperson':'Presides over grievance hearings; takes final institutional decision on escalated complaints; ensures compliance with UGC Grievance Regulations; submits annual grievance report to affiliating university.',
-      'Convener':'Receives, registers, and acknowledges all student grievances within 3 working days; coordinates inquiry process; maintains grievance register and disposal register; prepares meeting agenda and minutes.',
-      'Member (Clinical Faculty)':'Addresses grievances related to clinical postings, OPD/IPD rotations, and clinical training; participates in inquiry committees.',
-      'Member (Basic Science Faculty)':'Addresses grievances related to theory classes, practicals, and basic science departments; participates in inquiry committees.',
-      'Member (Administrative)':'Addresses administrative grievances (hostel, fees, documentation); maintains records; assists in implementing redressal decisions.',
-      'Student Representative (Male)':'Represents male student interests; brings systemic issues to the cell\'s notice; assists in peer-level resolution of minor grievances.',
-      'Student Representative (Female)':'Represents female student interests; brings systemic issues to the cell\'s notice; assists in peer-level resolution of minor grievances.',
-      'Member (Non-Teaching)':'Represents non-teaching staff perspective on student-staff issues; assists in redressal of facility-related grievances.',
-    }
-  },
-  alumni:{
-    basis:`The Alumni Cell is constituted in accordance with NCISM Regulations 2021, which mandate Ayurveda Medical Colleges to maintain active alumni networks to support institutional development, student mentorship, and professional networking. The cell is further constituted in line with UGC guidelines for Alumni Associations and the affiliating university's statutes. The cell facilitates lifelong engagement between the institution and its graduates, leveraging alumni expertise for curriculum enrichment, placement support, and institutional advancement.`,
-    freq_default:'Biannual (minimum 2 formal meetings per academic year; annual alumni meet)',
-    roles:{
-      'Chairperson':'Provides institutional leadership to the alumni cell; presides over annual alumni meet; approves major alumni engagement programmes; facilitates MoU and collaboration opportunities brought by alumni.',
-      'Convener / Coordinator':'Maintains updated alumni database; organises alumni meets and webinars; coordinates alumni mentorship programmes; manages alumni communication; prepares annual alumni activity report.',
-      'Member (Faculty)':'Maintains contact with alumni in their specialty area; facilitates alumni guest lectures and clinical demonstrations; mentors current students through alumni connections.',
-      'Member (Administrative)':'Maintains alumni records and contact database; manages alumni correspondence; coordinates logistics of alumni events.',
-      'President – Alumni Association':'Leads the alumni association; represents alumni interests to the institution; organises alumni chapter activities; chairs alumni association meetings.',
-      'Secretary – Alumni Association':'Maintains alumni association records and minutes; coordinates with institutional alumni cell; manages alumni membership; assists in organising events.',
-      'Member (Alumni – Senior Batch)':'Represents senior alumni perspective; mentors junior alumni; contributes to institutional development through experience sharing.',
-      'Member (Alumni – Recent Batch)':'Represents recent graduates\' perspective; assists in placement and internship guidance; connects current students with industry opportunities.',
-    }
-  },
-  entrepreneurship:{
-    basis:`The Entrepreneurship and Career Guidance Cell is constituted in accordance with NCISM Regulations 2021, Ministry of AYUSH guidelines on AYUSH entrepreneurship promotion, and the National Education Policy 2020 which emphasises skill development and entrepreneurship education. The cell is further constituted in line with the Startup India initiative and MSME Ministry guidelines for academic entrepreneurship cells. Its mandate is to equip Ayurveda graduates with entrepreneurial skills, career guidance, and industry linkages to promote self-employment and innovation in the AYUSH sector.`,
-    freq_default:'Monthly (minimum 10 meetings per academic year)',
-    roles:{
-      'Chairperson':'Provides institutional direction to the cell; facilitates industry and government linkages; approves entrepreneurship programmes and MOUs with industry; presides over annual career fair.',
-      'Convener / Coordinator':'Plans and implements career guidance programmes, workshops, and seminars; maintains industry contact database; organises campus placement drives; coordinates with AYUSH industry partners; prepares quarterly activity reports.',
-      'Member (Clinical Faculty)':'Guides students on clinical practice establishment, OPD setup, and clinical entrepreneurship; connects students with practising clinician entrepreneurs.',
-      'Member (Basic Science Faculty)':'Guides students on research-based entrepreneurship, herbal product development, and quality control careers; connects students with pharmaceutical industry.',
-      'Member (Administrative)':'Manages logistics of career events; maintains placement records; coordinates with HR representatives of visiting organisations.',
-      'Student Representative':'Coordinates peer participation in cell activities; collects student career aspiration data; assists in organising student-led entrepreneurship initiatives.',
-      'External Expert / Entrepreneur':'Provides industry perspective; mentors student entrepreneurs; judges business plan competitions; facilitates industry-academia linkages.',
-    }
-  },
-  ethics:{
-    basis:`The Institutional Ethics Committee (IEC) is constituted in accordance with the Indian Council of Medical Research (ICMR) National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017); CCIM/NCISM guidelines for Ayurveda research ethics; Schedule Y of the Drugs and Cosmetics Act 1940; and the Central Drugs Standard Control Organisation (CDSCO) Good Clinical Practice Guidelines. The committee ensures that all research conducted at the institution involving human participants, animals, or biological materials adheres to ethical principles of autonomy, beneficence, non-maleficence, and justice. Its constitution is mandatory for any institution conducting clinical trials or PG research.`,
-    freq_default:'Monthly or as required by research protocol submissions',
-    roles:{
-      'Chairperson':'Independent chairperson (not from the institution) who presides over all IEC meetings; ensures impartial review of research protocols; has final authority on protocol approval, rejection, or modification; signs all IEC certificates.',
-      'Member Secretary':'Receives all research protocol submissions; prepares agenda; records and circulates minutes; maintains IEC files and correspondence; issues approval letters; coordinates with researchers for revisions; maintains the protocol registry.',
-      'Member (Clinician – Medicine)':'Reviews clinical research protocols from the perspective of internal medicine; assesses risk-benefit ratio; evaluates informed consent documents; monitors ongoing studies.',
-      'Member (Clinician – Surgery)':'Reviews surgical and procedural research protocols; evaluates patient safety aspects; assesses procedural risks in proposed studies.',
-      'Member (Pharmacologist/Subject Expert)':'Reviews drug/formulation-related research; evaluates pharmacological safety data; assesses Ayurvedic formulation research protocols; advises on dose selection and safety monitoring.',
-      'Legal Expert / Advocate':'Advises on legal aspects of research ethics; reviews consent forms for legal adequacy; advises on liability and indemnity matters; ensures compliance with applicable laws.',
-      'Lay Person / Community Representative':'Represents community interests and patient perspective; assesses acceptability of research to the community; ensures research benefits are accessible to the general public.',
-      'Woman Member':'Ensures gender perspective in research protocols; reviews research involving women participants for ethical adequacy; advocates for women\'s health research priorities.',
-      'Statistician / Research Expert':'Reviews statistical design and sample size justification of protocols; advises on data safety and monitoring; reviews statistical analysis plans.',
-    }
-  },
-  hospital_mgmt:{
-    basis:`The Hospital Management Committee is constituted in accordance with NCISM (Minimum Standards of Education in Indian Medicine) Regulations 2021, which mandate Ayurveda Medical Colleges to have a functional Hospital Management Committee for effective governance of the attached teaching hospital. The committee ensures quality patient care, efficient hospital administration, regulatory compliance, and systematic development of hospital infrastructure and services. It functions in accordance with the Clinical Establishments (Registration and Regulation) Act 2010 and State Clinical Establishments Rules.`,
-    freq_default:'Monthly (minimum 12 meetings per academic year)',
-    roles:{
-      'Chairperson / Principal':'Provides overall leadership to hospital management; chairs monthly HMC meetings; interfaces between hospital management and college administration; ensures regulatory compliance; approves major hospital development initiatives.',
-      'Medical Superintendent':'Day-to-day administrative and clinical management of the hospital; implements HMC decisions; manages medical and paramedical staff; maintains hospital statistics and records; liaises with regulatory bodies.',
-      'Member (OPD In-charge)':'Manages OPD services; monitors patient footfall and satisfaction; ensures smooth OPD workflow; implements outpatient protocols; reports OPD statistics to HMC.',
-      'Member (IPD In-charge)':'Manages indoor patient services; monitors bed occupancy; ensures quality inpatient care; implements IPD protocols; reports IPD statistics to HMC.',
-      'HOD – Panchakarma':'Manages Panchakarma therapy unit; ensures quality of Panchakarma services; monitors patient safety in Panchakarma procedures; trains interns and UG/PG students.',
-      'Nursing Superintendent':'Manages nursing staff; ensures quality nursing care; maintains nursing standards; coordinates with medical staff; manages nursing rosters.',
-      'Pharmacist In-charge':'Manages hospital pharmacy; ensures availability of essential Ayurvedic medicines; maintains pharmacy records; ensures proper dispensing practices; manages drug store.',
-      'Member (Administrative)':'Manages non-clinical hospital administration; handles HR matters for hospital staff; manages contracts and procurement; maintains administrative records.',
-      'Accounts Officer':'Manages hospital accounts; prepares financial reports for HMC; monitors revenue and expenditure; manages billing systems.',
-      'Stores & Purchase Officer':'Manages procurement of medicines, equipment, and supplies; maintains store records; implements purchase policies approved by HMC.',
-    }
-  },
-  research:{
-    basis:`The Research Cell (Institutional Research Committee) is constituted in accordance with NCISM Regulations 2021, which mandate Ayurveda Medical Colleges to promote research culture and manage PG research activities. The cell operates in consonance with ICMR guidelines, the affiliating university's research regulations (Rajiv Gandhi University of Health Sciences, Karnataka), and the Ministry of AYUSH Research Policy 2022. Its mandate includes promotion of evidence-based Ayurveda research, facilitation of PG thesis research, coordination with external funding agencies, and maintenance of research quality standards.`,
-    freq_default:'Monthly (minimum 10 meetings per academic year)',
-    roles:{
-      'Chairperson':'Provides strategic leadership to institutional research; approves research priorities; facilitates external funding and collaboration; presides over annual research day; interfaces with RGUHSS and NCISM on research matters.',
-      'Convener / Research Coordinator':'Coordinates all PG research activities; maintains research protocol registry; organises research methodology workshops; prepares annual research report; liaises with IEC; manages research documentation.',
-      'PG Guide (Kayachikitsa)':'Guides MD/PhD scholars in Kayachikitsa; reviews and approves research protocols in the department; ensures adherence to research ethics; participates in synopsis and thesis evaluation.',
-      'PG Guide (Dravyaguna)':'Guides MD/PhD scholars in Dravyaguna; reviews pharmacognosy and phytochemistry research protocols; ensures botanical and pharmacological research standards.',
-      'PG Guide (Rasashastra & BK)':'Guides MD/PhD scholars in Rasashastra & Bhaishajya Kalpana; reviews pharmaceutical research protocols; ensures quality control research standards.',
-      'PG Guide (Shalya Tantra)':'Guides MD/PhD scholars in Shalya Tantra; reviews surgical and Ksharasutra research protocols; participates in clinical research oversight.',
-      'Biostatistician / Statistician':'Advises on statistical design of research protocols; reviews sample size calculations; assists in data analysis; guides scholars in statistical software use.',
-      'Librarian':'Facilitates access to research literature; provides Turnitin/plagiarism check facility; assists in systematic review and literature search; maintains journal subscriptions.',
-      'Student Representative (PG Scholar)':'Represents PG scholars\' research interests; brings forward difficulties in research process; assists in peer orientation for new scholars.',
-    }
-  },
-  sports_cultural:{
-    basis:`The Sports and Cultural Cell is constituted in accordance with NCISM Regulations 2021, which mandate Ayurveda Medical Colleges to provide sports and cultural facilities for holistic student development. The cell is further constituted in line with the Association of Indian Universities (AIU) guidelines for inter-university sports, Ministry of Youth Affairs and Sports guidelines, and the affiliating university's sports and cultural activity regulations. The cell promotes physical fitness, teamwork, artistic expression, and overall personality development among students.`,
-    freq_default:'Monthly (minimum 10 meetings per academic year; pre-event meetings as required)',
-    roles:{
-      'Chairperson':'Provides institutional support for sports and cultural activities; approves annual sports and cultural calendar; facilitates infrastructure development; presides over annual sports day and cultural fest.',
-      'Sports Coordinator':'Plans and implements the annual sports calendar; selects and trains students for inter-college and inter-university competitions; maintains sports equipment; prepares sports activity report; liaises with AIU/university for sports events.',
-      'Cultural Coordinator':'Plans and implements the annual cultural calendar; organises cultural fest, National/State day celebrations, and Ayurveda Day events; selects and trains students for cultural competitions; maintains cultural activity report.',
-      'Physical Education Instructor':'Conducts regular physical training sessions; coaches students in specific sports; maintains playground and sports equipment; assists Sports Coordinator in event organisation.',
-      'Member (Faculty)':'Supports sports and cultural events; acts as faculty in-charge during competitions; assists in event coordination; encourages student participation.',
-      'Student Representative (Sports – Male)':'Coordinates male student participation in sports events; captains/leads sports teams; communicates sports schedule to peers.',
-      'Student Representative (Sports – Female)':'Coordinates female student participation in sports events; leads female sports teams; communicates sports schedule to peers.',
-      'Student Representative (Cultural – Male)':'Coordinates male student participation in cultural events; leads cultural performances; assists in cultural event organisation.',
-      'Student Representative (Cultural – Female)':'Coordinates female student participation in cultural events; leads cultural performances; assists in cultural event organisation.',
-    }
-  },
-  library:{
-    basis:`The Library Committee is constituted in accordance with NCISM (Minimum Standards) Regulations 2021, which specify minimum library resources and management standards for Ayurveda Medical Colleges. The committee is further constituted in line with UGC guidelines on University and College Libraries and the affiliating university's library statutes. The committee ensures that the library collection, services, and infrastructure meet NCISM standards and adequately support teaching, learning, and research activities of the institution.`,
-    freq_default:'Quarterly (minimum 4 meetings per academic year)',
-    roles:{
-      'Chairperson':'Provides institutional direction to library development; approves major acquisitions and infrastructure upgrades; ensures library budget allocation; presides over annual library review meeting.',
-      'Convener / Librarian':'Manages day-to-day library operations; curates and develops library collection; manages library staff; implements library automation; prepares accession register and annual library report; coordinates interlibrary loan services; maintains journal subscriptions.',
-      'Member (Clinical Faculty)':'Advises on clinical textbook and journal acquisitions; identifies outdated resources for weeding; recommends e-resources relevant to clinical departments.',
-      'Member (Basic Science Faculty)':'Advises on basic science textbook and journal acquisitions; identifies resource gaps; recommends e-databases for basic science research.',
-      'Member (Administrative)':'Manages library budget and accounts; coordinates procurement procedures; ensures timely payment of journal subscriptions; assists in audit compliance.',
-      'Assistant Librarian':'Assists Librarian in cataloguing, classification, and day-to-day services; manages circulation counter; assists in library automation; coordinates with students on library services.',
-      'Student Representative (UG)':'Represents BAMS student library needs; provides feedback on collection adequacy; suggests additions to student reading list; assists in library orientation for new students.',
-      'Student Representative (PG)':'Represents PG scholar research resource needs; provides feedback on research journal access; suggests database subscriptions; assists in research literature orientation.',
-    }
-  },
-  examination:{
-    basis:`The Examination Cell (Internal Assessment and Examination Committee) is constituted in accordance with NCISM Regulations 2021, which mandate standardised internal assessment and examination processes in Ayurveda Medical Colleges, and the affiliating university's (RGUHS) examination regulations and statutes. The committee ensures fair, transparent, and systematic conduct of internal assessments, University examinations, and practical/clinical examinations. It implements the NCISM-mandated Assessment Blueprint and ensures compliance with all University examination circulars and notifications.`,
-    freq_default:'Monthly during examination periods; quarterly otherwise',
-    roles:{
-      'Chairperson':'Overall responsibility for examination integrity and compliance; approves examination schedules; interfaces with RGUHS on examination matters; approves internal assessment marks; addresses examination grievances escalated to principal level.',
-      'Chief Superintendent / Convener':'Plans and implements examination schedules; coordinates invigilation duties; ensures examination hall infrastructure; manages question paper security; supervises examination conduct; prepares examination reports; coordinates with RGUHS.',
-      'Member (Senior Faculty)':'Assists in question paper setting and moderation; participates in evaluation; acts as additional superintendent during examinations; contributes to assessment blueprint implementation.',
-      'Member (Clinical Faculty)':'Conducts and evaluates clinical/bedside examinations and practicals; sets and evaluates long and short case examinations; participates in internal assessment.',
-      'Member (Basic Science Faculty)':'Conducts and evaluates basic science practicals and viva voce; sets and evaluates theory question papers; participates in internal assessment.',
-      'Member (Administrative)':'Manages examination administration; maintains mark records; processes examination fee; manages examination stationery; coordinates with RGUHS for hall tickets and results.',
-      'Registrar / Examination Section Staff':'Maintains examination records; processes University correspondence; manages student data for examination purposes; coordinates practical examination logistics.',
-      'Student Representative':'Communicates examination schedule to peers; brings forward genuine student concerns about examination process to the cell; assists in smooth examination conduct.',
-    }
-  },
+const CELL_INFO={
+  anti_ragging:{basis:`The Anti-Ragging Cell is constituted in compliance with the Supreme Court of India directives (SLP No. 24295/2006), UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions 2009, and CCIM/NCISM guidelines for Ayurveda Medical Colleges. Section 26(1)(g) of the University Grants Commission Act, 1956 empowers UGC to frame such regulations. The Honourable Supreme Court in its judgment dated 16 May 2007 mandated all Higher Educational Institutions to constitute Anti-Ragging Committees and Squads. This cell is further mandated under the affiliating university statutes and the All India Council for Technical Education (AICTE) guidelines as applicable.`,freq_default:'Quarterly (minimum 4 meetings per academic year)',roles:{'Chairperson':'Overall responsibility for implementation of anti-ragging policies; presides over all meetings; takes final decisions on complaints; ensures compliance with UGC/NCISM/Supreme Court directives; submits annual anti-ragging report to affiliating university.','Nodal Officer / Convener':'Coordinates day-to-day functioning of the cell; receives and registers complaints; maintains complaint register; liaises with police and district authorities; organises awareness programmes; prepares agenda and minutes of meetings.','Member (Faculty)':'Participates in inquiry committees constituted to investigate ragging complaints; assists in awareness campaigns; monitors student behaviour in campus and hostel areas; reports incidents to Nodal Officer.','Member (Administrative)':'Maintains all administrative records of the cell; assists in documentation; coordinates hostel wardens; ensures display of anti-ragging notices and helpline numbers across campus.','Warden – Boys Hostel':'Monitors boys hostel premises; reports any ragging incidents immediately; ensures seniors and juniors are sensitised at the start of each academic year; maintains hostel discipline.','Warden – Girls Hostel':'Monitors girls hostel premises; reports any ragging incidents immediately; ensures seniors and juniors are sensitised at the start of each academic year; maintains hostel discipline.','Student Representative':'Acts as peer sensitiser; reports ragging incidents observed; participates in awareness drives; assists in maintaining a ragging-free campus culture.','Member (Non-Teaching Staff)':'Reports observed incidents; assists in maintaining campus discipline; participates in awareness activities.','Member (Police Liaison)':'Provides interface with local law enforcement; assists in cases requiring police intervention; advises committee on legal procedures.'}},
+  icc:{basis:`The Internal Complaints Committee (ICC) is constituted under Section 4 of the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (Central Act 14 of 2013). Every employer with 10 or more employees is legally mandated to constitute an ICC. This is further reinforced by NCISM Regulations 2021 and the affiliating university's statutes. The committee operates in accordance with the SH Act 2013 and the rules framed thereunder, ensuring a safe and dignified working and learning environment for all women employees and students.`,freq_default:'As required (complaint-based); mandatory annual awareness meeting',roles:{'Presiding Officer':'Senior female employee who presides over the ICC; leads all inquiry proceedings; ensures fair and time-bound inquiry (within 90 days); submits inquiry report and recommendations to the Principal/Management; presides over awareness meetings.','Member (Internal – Female)':'Participates in inquiry proceedings; assists Presiding Officer; reviews evidence and submissions; signs inquiry report; maintains confidentiality of all proceedings.','Member (Internal)':'Supports inquiry process; provides departmental perspective; assists in maintaining records; ensures compliance with SH Act timelines.','Member (Non-Teaching – Female)':"Represents non-teaching staff perspective; participates in inquiry; assists in awareness activities for non-teaching staff.",'Member (External – NGO)':"Independent member from an NGO committed to women's causes; provides external oversight; ensures impartiality of proceedings; guides the committee on legal and procedural matters.",'Legal Expert / Advocate':'Advises the committee on legal aspects of complaints; assists in interpreting the SH Act and rules; reviews inquiry reports for legal compliance.'}},
+  sc_st:{basis:`The SC/ST Cell is constituted in accordance with the Constitutional provisions under Articles 15, 16, 17, and 46 of the Constitution of India; the Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, 1989; UGC guidelines for SC/ST Cells in Higher Educational Institutions; and NCISM Regulations 2021.`,freq_default:'Biannual (minimum 2 meetings per academic year)',roles:{'Chairperson':'Overall responsibility for SC/ST Cell functioning; ensures non-discrimination policies are implemented; reviews grievances escalated to the principal level.','Liaison Officer / Convener':'Primary point of contact for SC/ST students; receives and addresses grievances; maintains grievance register; coordinates scholarship and welfare schemes; prepares annual report.','Member (Faculty)':'Mentors SC/ST students academically; reports discriminatory incidents; participates in awareness activities.','Member (Administrative)':'Maintains records of SC/ST students; assists in scholarship documentation; ensures fee concession benefits are properly administered.','Student Representative':'Bridges communication between SC/ST students and cell; brings forward concerns of peers.','Member (Non-Teaching Staff)':'Supports cell activities; reports observed incidents of discrimination; participates in sensitisation programmes.'}},
+  grievance:{basis:`The Student Grievance Redressal Cell is constituted in compliance with UGC (Redressal of Grievances of Students) Regulations 2019, NCISM Regulations 2021, and the affiliating university's student welfare statutes.`,freq_default:'Monthly (minimum 12 meetings per academic year)',roles:{'Chairperson':'Presides over grievance hearings; takes final institutional decision on escalated complaints; submits annual grievance report.','Convener':'Receives, registers, and acknowledges all student grievances within 3 working days; coordinates inquiry process; maintains registers.','Member (Clinical Faculty)':'Addresses grievances related to clinical postings and rotations; participates in inquiry committees.','Member (Basic Science Faculty)':'Addresses grievances related to theory classes and practicals; participates in inquiry committees.','Member (Administrative)':'Addresses administrative grievances; maintains records; assists in implementing redressal decisions.','Student Representative (Male)':"Represents male student interests; brings systemic issues to the cell's notice.",'Student Representative (Female)':"Represents female student interests; brings systemic issues to the cell's notice.",'Member (Non-Teaching)':'Represents non-teaching staff perspective on student-staff issues.'}},
+  alumni:{basis:`The Alumni Cell is constituted in accordance with NCISM Regulations 2021 and UGC guidelines for Alumni Associations.`,freq_default:'Biannual (minimum 2 formal meetings per academic year; annual alumni meet)',roles:{'Chairperson':'Provides institutional leadership; presides over annual alumni meet; approves major alumni engagement programmes.','Convener / Coordinator':'Maintains updated alumni database; organises alumni meets and webinars; coordinates mentorship programmes; prepares annual report.','Member (Faculty)':'Maintains contact with alumni in their specialty; facilitates guest lectures; mentors current students.','Member (Administrative)':'Maintains alumni records; manages alumni correspondence; coordinates logistics of alumni events.','President – Alumni Association':'Leads the alumni association; represents alumni interests to the institution.','Secretary – Alumni Association':'Maintains alumni association records and minutes; manages alumni membership.','Member (Alumni – Senior Batch)':'Represents senior alumni perspective; mentors junior alumni; contributes to institutional development.','Member (Alumni – Recent Batch)':"Represents recent graduates' perspective; assists in placement and internship guidance."}},
+  entrepreneurship:{basis:`The Entrepreneurship and Career Guidance Cell is constituted in accordance with NCISM Regulations 2021, Ministry of AYUSH guidelines on AYUSH entrepreneurship promotion, and the National Education Policy 2020.`,freq_default:'Monthly (minimum 10 meetings per academic year)',roles:{'Chairperson':'Provides institutional direction; facilitates industry and government linkages; approves entrepreneurship programmes.','Convener / Coordinator':'Plans and implements career guidance programmes, workshops, and seminars; organises placement drives; prepares quarterly activity reports.','Member (Clinical Faculty)':'Guides students on clinical practice establishment and clinical entrepreneurship.','Member (Basic Science Faculty)':'Guides students on research-based entrepreneurship and herbal product development.','Member (Administrative)':'Manages logistics of career events; maintains placement records.','Student Representative':'Coordinates peer participation; assists in organising student-led entrepreneurship initiatives.','External Expert / Entrepreneur':'Provides industry perspective; mentors student entrepreneurs; facilitates industry-academia linkages.'}},
+  ethics:{basis:`The Institutional Ethics Committee (IEC) is constituted in accordance with the ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017); CCIM/NCISM guidelines for Ayurveda research ethics; Schedule Y of the Drugs and Cosmetics Act 1940; and the CDSCO Good Clinical Practice Guidelines.`,freq_default:'Monthly or as required by research protocol submissions',roles:{'Chairperson':'Independent chairperson who presides over all IEC meetings; ensures impartial review; has final authority on protocol approval; signs all IEC certificates.','Member Secretary':'Receives all research protocol submissions; prepares agenda; records minutes; issues approval letters; maintains protocol registry.','Member (Clinician – Medicine)':'Reviews clinical research protocols; assesses risk-benefit ratio; evaluates informed consent documents.','Member (Clinician – Surgery)':'Reviews surgical and procedural research protocols; evaluates patient safety aspects.','Member (Pharmacologist/Subject Expert)':'Reviews drug/formulation-related research; evaluates pharmacological safety data.','Legal Expert / Advocate':'Advises on legal aspects of research ethics; reviews consent forms for legal adequacy.','Lay Person / Community Representative':'Represents community interests and patient perspective; assesses acceptability of research to the community.','Woman Member':"Ensures gender perspective in research protocols; reviews research involving women participants.",'Statistician / Research Expert':'Reviews statistical design and sample size justification; advises on data safety and monitoring.'}},
+  hospital_mgmt:{basis:`The Hospital Management Committee is constituted in accordance with NCISM (Minimum Standards of Education in Indian Medicine) Regulations 2021 and the Clinical Establishments (Registration and Regulation) Act 2010.`,freq_default:'Monthly (minimum 12 meetings per academic year)',roles:{'Chairperson / Principal':'Provides overall leadership; chairs monthly HMC meetings; ensures regulatory compliance; approves major hospital development initiatives.','Medical Superintendent':'Day-to-day administrative and clinical management of the hospital; implements HMC decisions; maintains hospital statistics.','Member (OPD In-charge)':'Manages OPD services; monitors patient footfall and satisfaction; ensures smooth OPD workflow; reports OPD statistics.','Member (IPD In-charge)':'Manages indoor patient services; monitors bed occupancy; ensures quality inpatient care; reports IPD statistics.','HOD – Panchakarma':'Manages Panchakarma therapy unit; ensures quality and patient safety in Panchakarma procedures.','Nursing Superintendent':'Manages nursing staff; ensures quality nursing care; maintains nursing standards.','Pharmacist In-charge':'Manages hospital pharmacy; ensures availability of essential Ayurvedic medicines; manages drug store.','Member (Administrative)':'Manages non-clinical hospital administration; handles HR matters; manages contracts and procurement.','Accounts Officer':'Manages hospital accounts; prepares financial reports; monitors revenue and expenditure.','Stores & Purchase Officer':'Manages procurement of medicines, equipment, and supplies; maintains store records.'}},
+  research:{basis:`The Research Cell is constituted in accordance with NCISM Regulations 2021, ICMR guidelines, the affiliating university's research regulations (RGUHS, Karnataka), and the Ministry of AYUSH Research Policy 2022.`,freq_default:'Monthly (minimum 10 meetings per academic year)',roles:{'Chairperson':'Provides strategic leadership to institutional research; approves research priorities; facilitates external funding and collaboration; presides over annual research day.','Convener / Research Coordinator':'Coordinates all PG research activities; maintains research protocol registry; organises research methodology workshops; liaises with IEC; prepares annual research report.','PG Guide (Kayachikitsa)':'Guides MD/PhD scholars in Kayachikitsa; reviews and approves research protocols; ensures adherence to research ethics.','PG Guide (Dravyaguna)':'Guides MD/PhD scholars in Dravyaguna; reviews pharmacognosy and phytochemistry research protocols.','PG Guide (Rasashastra & BK)':'Guides MD/PhD scholars in Rasashastra & Bhaishajya Kalpana; reviews pharmaceutical research protocols.','PG Guide (Shalya Tantra)':'Guides MD/PhD scholars in Shalya Tantra; reviews surgical and Ksharasutra research protocols.','Biostatistician / Statistician':'Advises on statistical design; reviews sample size calculations; assists in data analysis.','Librarian':'Facilitates access to research literature; provides plagiarism check facility; maintains journal subscriptions.','Student Representative (PG Scholar)':"Represents PG scholars' research interests; assists in peer orientation for new scholars."}},
+  sports_cultural:{basis:`The Sports and Cultural Cell is constituted in accordance with NCISM Regulations 2021, Association of Indian Universities (AIU) guidelines for inter-university sports, Ministry of Youth Affairs and Sports guidelines, and the affiliating university's statutes.`,freq_default:'Monthly (minimum 10 meetings per academic year; pre-event meetings as required)',roles:{'Chairperson':'Provides institutional support for sports and cultural activities; approves annual calendar; facilitates infrastructure development; presides over annual sports day and cultural fest.','Sports Coordinator':'Plans and implements the annual sports calendar; selects and trains students for inter-college and inter-university competitions; maintains sports equipment.','Cultural Coordinator':'Plans and implements the annual cultural calendar; organises cultural fest and Ayurveda Day events; selects and trains students for cultural competitions.','Physical Education Instructor':'Conducts regular physical training sessions; coaches students in specific sports; maintains playground and sports equipment.','Member (Faculty)':'Supports sports and cultural events; acts as faculty in-charge during competitions; encourages student participation.','Student Representative (Sports – Male)':'Coordinates male student participation in sports events; captains/leads sports teams.','Student Representative (Sports – Female)':'Coordinates female student participation in sports events; leads female sports teams.','Student Representative (Cultural – Male)':'Coordinates male student participation in cultural events; leads cultural performances.','Student Representative (Cultural – Female)':'Coordinates female student participation in cultural events; leads cultural performances.'}},
+  library:{basis:`The Library Committee is constituted in accordance with NCISM (Minimum Standards) Regulations 2021 and UGC guidelines on University and College Libraries.`,freq_default:'Quarterly (minimum 4 meetings per academic year)',roles:{'Chairperson':'Provides institutional direction to library development; approves major acquisitions and infrastructure upgrades; ensures library budget allocation.','Convener / Librarian':'Manages day-to-day library operations; curates library collection; implements library automation; prepares annual library report; coordinates interlibrary loan services.','Member (Clinical Faculty)':'Advises on clinical textbook and journal acquisitions; identifies outdated resources for weeding.','Member (Basic Science Faculty)':'Advises on basic science textbook and journal acquisitions; identifies resource gaps.','Member (Administrative)':'Manages library budget and accounts; coordinates procurement procedures; ensures timely payment of journal subscriptions.','Assistant Librarian':'Assists Librarian in cataloguing, classification, and day-to-day services; manages circulation counter; assists in library automation.','Student Representative (UG)':'Represents BAMS student library needs; provides feedback on collection adequacy.','Student Representative (PG)':"Represents PG scholar research resource needs; provides feedback on research journal access."}},
+  examination:{basis:`The Examination Cell is constituted in accordance with NCISM Regulations 2021 and the affiliating university's (RGUHS) examination regulations and statutes.`,freq_default:'Monthly during examination periods; quarterly otherwise',roles:{'Chairperson':'Overall responsibility for examination integrity and compliance; approves examination schedules; interfaces with RGUHS; addresses examination grievances.','Chief Superintendent / Convener':'Plans and implements examination schedules; coordinates invigilation duties; manages question paper security; supervises examination conduct; coordinates with RGUHS.','Member (Senior Faculty)':'Assists in question paper setting and moderation; participates in evaluation; acts as additional superintendent.','Member (Clinical Faculty)':'Conducts and evaluates clinical/bedside examinations and practicals; participates in internal assessment.','Member (Basic Science Faculty)':'Conducts and evaluates basic science practicals and viva voce; participates in internal assessment.','Member (Administrative)':'Manages examination administration; maintains mark records; manages examination stationery; coordinates with RGUHS.','Registrar / Examination Section Staff':'Maintains examination records; processes University correspondence; coordinates practical examination logistics.','Student Representative':'Communicates examination schedule to peers; brings forward genuine student concerns about examination process.'}}
 };
 
-const CELL_MEMBERS = {
-  anti_ragging:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Nodal Officer / Convener',post:'Senior Faculty Member'},
-    {sno:3,desig:'Member',post:'Professor – Dept. of Kayachikitsa'},
-    {sno:4,desig:'Member',post:'Professor – Dept. of Shalya Tantra'},
-    {sno:5,desig:'Member',post:'Professor – Dept. of Prasuti & Stree Roga'},
-    {sno:6,desig:'Member',post:'Registrar / Administrative Officer'},
-    {sno:7,desig:'Member',post:'Warden – Boys Hostel'},
-    {sno:8,desig:'Member',post:'Warden – Girls Hostel'},
-    {sno:9,desig:'Student Representative',post:'BAMS Final Year Student (Male)'},
-    {sno:10,desig:'Student Representative',post:'BAMS Final Year Student (Female)'},
-    {sno:11,desig:'Member',post:'Non-Teaching Staff Representative'},
-    {sno:12,desig:'Member',post:'Local Police Liaison Officer'},
-  ],
-  icc:[
-    {sno:1,desig:'Presiding Officer',post:'Senior Female Faculty Member'},
-    {sno:2,desig:'Member (Internal)',post:'Faculty Member – Female'},
-    {sno:3,desig:'Member (Internal)',post:'Faculty Member – Female'},
-    {sno:4,desig:'Member (Internal)',post:'Non-Teaching Staff – Female'},
-    {sno:5,desig:'Member (External)',post:'NGO / Social Worker Representative'},
-    {sno:6,desig:'Member',post:'Legal Expert / Advocate (if available)'},
-  ],
-  sc_st:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Liaison Officer / Convener',post:'Faculty Member (SC/ST Category preferred)'},
-    {sno:3,desig:'Member',post:'Faculty Representative'},
-    {sno:4,desig:'Member',post:'Administrative Officer'},
-    {sno:5,desig:'Student Representative',post:'SC/ST Category Student'},
-    {sno:6,desig:'Member',post:'Non-Teaching Staff Representative'},
-  ],
-  grievance:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Convener',post:'Senior Faculty Member'},
-    {sno:3,desig:'Member',post:'Faculty Representative – Clinical Dept.'},
-    {sno:4,desig:'Member',post:'Faculty Representative – Basic Science Dept.'},
-    {sno:5,desig:'Member',post:'Administrative Officer'},
-    {sno:6,desig:'Student Representative',post:'BAMS Student (Male)'},
-    {sno:7,desig:'Student Representative',post:'BAMS Student (Female)'},
-    {sno:8,desig:'Member',post:'Non-Teaching Staff Representative'},
-  ],
-  alumni:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Convener / Coordinator',post:'Faculty Member – Alumni Relations'},
-    {sno:3,desig:'Member',post:'Faculty Member'},
-    {sno:4,desig:'Member',post:'Administrative Officer'},
-    {sno:5,desig:'President – Alumni Association',post:'Alumni Representative'},
-    {sno:6,desig:'Secretary – Alumni Association',post:'Alumni Representative'},
-    {sno:7,desig:'Member',post:'Alumni Representative (Senior Batch)'},
-    {sno:8,desig:'Member',post:'Alumni Representative (Recent Batch)'},
-  ],
-  entrepreneurship:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Convener / Coordinator',post:'Faculty Member – Career Guidance Cell'},
-    {sno:3,desig:'Member',post:'Faculty Member – Clinical Dept.'},
-    {sno:4,desig:'Member',post:'Faculty Member – Basic Science Dept.'},
-    {sno:5,desig:'Member',post:'Administrative Officer'},
-    {sno:6,desig:'Student Representative',post:'BAMS Final Year Student'},
-    {sno:7,desig:'External Expert',post:'Industry / Entrepreneur Representative'},
-  ],
-  ethics:[
-    {sno:1,desig:'Chairperson',post:'Principal / Senior Physician (non-institutional preferred)'},
-    {sno:2,desig:'Member Secretary',post:'Faculty Member'},
-    {sno:3,desig:'Member',post:'Clinician – Internal Medicine'},
-    {sno:4,desig:'Member',post:'Clinician – Surgery'},
-    {sno:5,desig:'Member',post:'Pharmacologist / Subject Expert'},
-    {sno:6,desig:'Legal Expert',post:'Advocate / Legal Advisor'},
-    {sno:7,desig:'Lay Person / Community Representative',post:'Non-medical Community Member'},
-    {sno:8,desig:'Woman Member',post:'Female Faculty / Community Member'},
-    {sno:9,desig:'Member',post:'Statistician / Research Expert'},
-  ],
-  hospital_mgmt:[
-    {sno:1,desig:'Chairperson',post:'Principal / Medical Superintendent'},
-    {sno:2,desig:'Medical Superintendent',post:'MS / Hospital In-charge'},
-    {sno:3,desig:'Member',post:'Senior Clinician – OPD In-charge'},
-    {sno:4,desig:'Member',post:'Senior Clinician – IPD In-charge'},
-    {sno:5,desig:'Member',post:'HOD – Dept. of Panchakarma'},
-    {sno:6,desig:'Member',post:'Nursing Superintendent'},
-    {sno:7,desig:'Member',post:'Pharmacist In-charge'},
-    {sno:8,desig:'Member',post:'Administrative Officer'},
-    {sno:9,desig:'Member',post:'Accounts Officer'},
-    {sno:10,desig:'Member',post:'Stores & Purchase Officer'},
-  ],
-  research:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Convener / Research Coordinator',post:'Faculty Member – Research & PG Studies'},
-    {sno:3,desig:'Member',post:'PG Guide – Dept. of Kayachikitsa'},
-    {sno:4,desig:'Member',post:'PG Guide – Dept. of Dravyaguna'},
-    {sno:5,desig:'Member',post:'PG Guide – Dept. of Rasashastra & BK'},
-    {sno:6,desig:'Member',post:'PG Guide – Dept. of Shalya Tantra'},
-    {sno:7,desig:'Member',post:'Biostatistician / Statistician'},
-    {sno:8,desig:'Member',post:'Librarian'},
-    {sno:9,desig:'Student Representative',post:'PG Scholar'},
-  ],
-  sports_cultural:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Sports Coordinator',post:'Faculty Member – Sports In-charge'},
-    {sno:3,desig:'Cultural Coordinator',post:'Faculty Member – Cultural In-charge'},
-    {sno:4,desig:'Member',post:'Physical Education Instructor'},
-    {sno:5,desig:'Member',post:'Faculty Member'},
-    {sno:6,desig:'Student Representative – Sports',post:'BAMS Student (Male)'},
-    {sno:7,desig:'Student Representative – Sports',post:'BAMS Student (Female)'},
-    {sno:8,desig:'Student Representative – Cultural',post:'BAMS Student (Male)'},
-    {sno:9,desig:'Student Representative – Cultural',post:'BAMS Student (Female)'},
-  ],
-  library:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Convener / Library In-charge',post:'Librarian'},
-    {sno:3,desig:'Member',post:'Faculty Representative – Clinical Dept.'},
-    {sno:4,desig:'Member',post:'Faculty Representative – Basic Science Dept.'},
-    {sno:5,desig:'Member',post:'Administrative Officer'},
-    {sno:6,desig:'Member',post:'Assistant Librarian'},
-    {sno:7,desig:'Student Representative',post:'BAMS Student'},
-    {sno:8,desig:'Student Representative',post:'PG Scholar'},
-  ],
-  examination:[
-    {sno:1,desig:'Chairperson',post:'Principal'},
-    {sno:2,desig:'Chief Superintendent / Convener',post:'Faculty Member – Exam In-charge'},
-    {sno:3,desig:'Member',post:'Faculty Member – Senior'},
-    {sno:4,desig:'Member',post:'Faculty Member – Clinical Dept.'},
-    {sno:5,desig:'Member',post:'Faculty Member – Basic Science Dept.'},
-    {sno:6,desig:'Member',post:'Administrative Officer'},
-    {sno:7,desig:'Member',post:'Registrar / Examination Section Staff'},
-    {sno:8,desig:'Student Representative',post:'BAMS Final Year Student'},
-  ],
+const CELL_MEMBERS={
+  anti_ragging:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Nodal Officer / Convener',post:'Senior Faculty Member'},{sno:3,desig:'Member',post:'Professor – Dept. of Kayachikitsa'},{sno:4,desig:'Member',post:'Professor – Dept. of Shalya Tantra'},{sno:5,desig:'Member',post:'Professor – Dept. of Prasuti & Stree Roga'},{sno:6,desig:'Member',post:'Registrar / Administrative Officer'},{sno:7,desig:'Member',post:'Warden – Boys Hostel'},{sno:8,desig:'Member',post:'Warden – Girls Hostel'},{sno:9,desig:'Student Representative',post:'BAMS Final Year Student (Male)'},{sno:10,desig:'Student Representative',post:'BAMS Final Year Student (Female)'},{sno:11,desig:'Member',post:'Non-Teaching Staff Representative'},{sno:12,desig:'Member',post:'Local Police Liaison Officer'}],
+  icc:[{sno:1,desig:'Presiding Officer',post:'Senior Female Faculty Member'},{sno:2,desig:'Member (Internal)',post:'Faculty Member – Female'},{sno:3,desig:'Member (Internal)',post:'Faculty Member – Female'},{sno:4,desig:'Member (Internal)',post:'Non-Teaching Staff – Female'},{sno:5,desig:'Member (External)',post:'NGO / Social Worker Representative'},{sno:6,desig:'Member',post:'Legal Expert / Advocate (if available)'}],
+  sc_st:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Liaison Officer / Convener',post:'Faculty Member (SC/ST Category preferred)'},{sno:3,desig:'Member',post:'Faculty Representative'},{sno:4,desig:'Member',post:'Administrative Officer'},{sno:5,desig:'Student Representative',post:'SC/ST Category Student'},{sno:6,desig:'Member',post:'Non-Teaching Staff Representative'}],
+  grievance:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Convener',post:'Senior Faculty Member'},{sno:3,desig:'Member',post:'Faculty Representative – Clinical Dept.'},{sno:4,desig:'Member',post:'Faculty Representative – Basic Science Dept.'},{sno:5,desig:'Member',post:'Administrative Officer'},{sno:6,desig:'Student Representative',post:'BAMS Student (Male)'},{sno:7,desig:'Student Representative',post:'BAMS Student (Female)'},{sno:8,desig:'Member',post:'Non-Teaching Staff Representative'}],
+  alumni:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Convener / Coordinator',post:'Faculty Member – Alumni Relations'},{sno:3,desig:'Member',post:'Faculty Member'},{sno:4,desig:'Member',post:'Administrative Officer'},{sno:5,desig:'President – Alumni Association',post:'Alumni Representative'},{sno:6,desig:'Secretary – Alumni Association',post:'Alumni Representative'},{sno:7,desig:'Member',post:'Alumni Representative (Senior Batch)'},{sno:8,desig:'Member',post:'Alumni Representative (Recent Batch)'}],
+  entrepreneurship:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Convener / Coordinator',post:'Faculty Member – Career Guidance Cell'},{sno:3,desig:'Member',post:'Faculty Member – Clinical Dept.'},{sno:4,desig:'Member',post:'Faculty Member – Basic Science Dept.'},{sno:5,desig:'Member',post:'Administrative Officer'},{sno:6,desig:'Student Representative',post:'BAMS Final Year Student'},{sno:7,desig:'External Expert',post:'Industry / Entrepreneur Representative'}],
+  ethics:[{sno:1,desig:'Chairperson',post:'Principal / Senior Physician (non-institutional preferred)'},{sno:2,desig:'Member Secretary',post:'Faculty Member'},{sno:3,desig:'Member',post:'Clinician – Internal Medicine'},{sno:4,desig:'Member',post:'Clinician – Surgery'},{sno:5,desig:'Member',post:'Pharmacologist / Subject Expert'},{sno:6,desig:'Legal Expert',post:'Advocate / Legal Advisor'},{sno:7,desig:'Lay Person / Community Representative',post:'Non-medical Community Member'},{sno:8,desig:'Woman Member',post:'Female Faculty / Community Member'},{sno:9,desig:'Member',post:'Statistician / Research Expert'}],
+  hospital_mgmt:[{sno:1,desig:'Chairperson',post:'Principal / Medical Superintendent'},{sno:2,desig:'Medical Superintendent',post:'MS / Hospital In-charge'},{sno:3,desig:'Member',post:'Senior Clinician – OPD In-charge'},{sno:4,desig:'Member',post:'Senior Clinician – IPD In-charge'},{sno:5,desig:'Member',post:'HOD – Dept. of Panchakarma'},{sno:6,desig:'Member',post:'Nursing Superintendent'},{sno:7,desig:'Member',post:'Pharmacist In-charge'},{sno:8,desig:'Member',post:'Administrative Officer'},{sno:9,desig:'Member',post:'Accounts Officer'},{sno:10,desig:'Member',post:'Stores & Purchase Officer'}],
+  research:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Convener / Research Coordinator',post:'Faculty Member – Research & PG Studies'},{sno:3,desig:'Member',post:'PG Guide – Dept. of Kayachikitsa'},{sno:4,desig:'Member',post:'PG Guide – Dept. of Dravyaguna'},{sno:5,desig:'Member',post:'PG Guide – Dept. of Rasashastra & BK'},{sno:6,desig:'Member',post:'PG Guide – Dept. of Shalya Tantra'},{sno:7,desig:'Member',post:'Biostatistician / Statistician'},{sno:8,desig:'Member',post:'Librarian'},{sno:9,desig:'Student Representative',post:'PG Scholar'}],
+  sports_cultural:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Sports Coordinator',post:'Faculty Member – Sports In-charge'},{sno:3,desig:'Cultural Coordinator',post:'Faculty Member – Cultural In-charge'},{sno:4,desig:'Member',post:'Physical Education Instructor'},{sno:5,desig:'Member',post:'Faculty Member'},{sno:6,desig:'Student Representative – Sports',post:'BAMS Student (Male)'},{sno:7,desig:'Student Representative – Sports',post:'BAMS Student (Female)'},{sno:8,desig:'Student Representative – Cultural',post:'BAMS Student (Male)'},{sno:9,desig:'Student Representative – Cultural',post:'BAMS Student (Female)'}],
+  library:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Convener / Library In-charge',post:'Librarian'},{sno:3,desig:'Member',post:'Faculty Representative – Clinical Dept.'},{sno:4,desig:'Member',post:'Faculty Representative – Basic Science Dept.'},{sno:5,desig:'Member',post:'Administrative Officer'},{sno:6,desig:'Member',post:'Assistant Librarian'},{sno:7,desig:'Student Representative',post:'BAMS Student'},{sno:8,desig:'Student Representative',post:'PG Scholar'}],
+  examination:[{sno:1,desig:'Chairperson',post:'Principal'},{sno:2,desig:'Chief Superintendent / Convener',post:'Faculty Member – Exam In-charge'},{sno:3,desig:'Member',post:'Faculty Member – Senior'},{sno:4,desig:'Member',post:'Faculty Member – Clinical Dept.'},{sno:5,desig:'Member',post:'Faculty Member – Basic Science Dept.'},{sno:6,desig:'Member',post:'Administrative Officer'},{sno:7,desig:'Member',post:'Registrar / Examination Section Staff'},{sno:8,desig:'Student Representative',post:'BAMS Final Year Student'}]
 };
 
-const CELLS = [
-  {id:'anti_ragging',  label:'Anti-Ragging',      full:'Anti-Ragging Cell'},
-  {id:'icc',           label:'ICC',                full:'Internal Complaints Committee (ICC)'},
-  {id:'sc_st',         label:'SC/ST Cell',         full:'SC/ST Cell'},
-  {id:'grievance',     label:'Grievance Cell',     full:'Student Grievance Redressal Cell'},
-  {id:'alumni',        label:'Alumni Cell',        full:'Alumni Cell'},
+const CELLS=[
+  {id:'anti_ragging',label:'Anti-Ragging',full:'Anti-Ragging Cell'},
+  {id:'icc',label:'ICC',full:'Internal Complaints Committee (ICC)'},
+  {id:'sc_st',label:'SC/ST Cell',full:'SC/ST Cell'},
+  {id:'grievance',label:'Grievance Cell',full:'Student Grievance Redressal Cell'},
+  {id:'alumni',label:'Alumni Cell',full:'Alumni Cell'},
   {id:'entrepreneurship',label:'Career/Entrepreneur',full:'Entrepreneurship & Career Guidance Cell'},
-  {id:'ethics',        label:'Ethics Committee',   full:'Ethics Committee'},
-  {id:'hospital_mgmt', label:'Hospital Mgmt',      full:'Hospital Management Committee'},
-  {id:'research',      label:'Research Cell',      full:'Research Cell'},
-  {id:'sports_cultural',label:'Sports & Cultural', full:'Sports & Cultural Cell'},
-  {id:'library',       label:'Library Committee',  full:'Library Committee'},
-  {id:'examination',   label:'Examination Cell',   full:'Examination Cell'},
+  {id:'ethics',label:'Ethics Committee',full:'Ethics Committee'},
+  {id:'hospital_mgmt',label:'Hospital Mgmt',full:'Hospital Management Committee'},
+  {id:'research',label:'Research Cell',full:'Research Cell'},
+  {id:'sports_cultural',label:'Sports & Cultural',full:'Sports & Cultural Cell'},
+  {id:'library',label:'Library Committee',full:'Library Committee'},
+  {id:'examination',label:'Examination Cell',full:'Examination Cell'},
 ];
 
 const FREQ_OPTIONS=['Weekly','Fortnightly','Monthly','Bimonthly','Quarterly','Biannual (twice a year)','Annual','As required / Complaint-based','Monthly during exam periods; quarterly otherwise'];
-
 let state={};
 const STORAGE_KEY='jagm_cells_v4';
 
@@ -430,14 +180,17 @@ function buildTabs(){
     bar.appendChild(b);
   });
   const dl=document.createElement('button');
-  dl.className='tab-btn downloads-tab';
-  dl.textContent='📥 Downloads';dl.dataset.id='downloads';
-  dl.onclick=()=>switchTab('downloads');
-  bar.appendChild(dl);
+  dl.className='tab-btn downloads-tab';dl.textContent='📥 Downloads';dl.dataset.id='downloads';
+  dl.onclick=()=>switchTab('downloads');bar.appendChild(dl);
+  const sy=document.createElement('button');
+  sy.className='tab-btn sync-tab';sy.textContent='🔄 Export / Import';sy.dataset.id='sync';
+  sy.onclick=()=>switchTab('sync');bar.appendChild(sy);
 }
 function switchTab(id){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.id===id));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.dataset.id===id));
+  if(id==='sync')refreshExportPreview();
+  if(id==='downloads')updateDownloadMeta();
 }
 
 function buildPanels(){
@@ -445,17 +198,135 @@ function buildPanels(){
   CELLS.forEach((c,i)=>{
     const div=document.createElement('div');
     div.className='tab-panel'+(i===0?' active':'');
-    div.dataset.id=c.id;
-    div.innerHTML=panelHTML(c);
+    div.dataset.id=c.id;div.innerHTML=panelHTML(c);
     container.appendChild(div);
   });
-  // Downloads panel
-  const dl=document.createElement('div');
-  dl.className='tab-panel';dl.dataset.id='downloads';
-  dl.innerHTML=downloadsHTML();
-  container.appendChild(dl);
+  const dl=document.createElement('div');dl.className='tab-panel';dl.dataset.id='downloads';dl.innerHTML=downloadsHTML();container.appendChild(dl);
+  const sy=document.createElement('div');sy.className='tab-panel';sy.dataset.id='sync';sy.innerHTML=syncHTML();container.appendChild(sy);
 }
 
+// ── SYNC PANEL ─────────────────────────────────────────────────────────────────
+function syncHTML(){
+  return `
+  <div class="card">
+    <h2>🔄 Export / Import Data</h2>
+    <p style="font-size:.82rem;color:#4a5568;margin-bottom:16px;line-height:1.6">Use this panel to transfer all cell data between devices or share it with a collaborator. The data is exported as a single JSON file. The recipient imports it on their device and all 12 cells are populated instantly.</p>
+  </div>
+
+  <div class="sync-box">
+    <h3>📤 Export – Share your data with a collaborator</h3>
+    <p>Click the button below to download a <strong>backup file (.json)</strong> containing all data currently entered across all 12 cells. Send this file to your collaborator via WhatsApp, email, or any file sharing method.</p>
+    <ul class="sync-steps">
+      <li>Save all your data first (click Save on any tab you have open)</li>
+      <li>Click <strong>Export All Data</strong> below — a .json file will download</li>
+      <li>Share that file with your collaborator (WhatsApp / email / Google Drive)</li>
+      <li>They open this tool on their device, go to Export/Import tab, and import the file</li>
+    </ul>
+    <div class="btn-row" style="margin-top:14px">
+      <button class="btn-teal" onclick="exportData()">📤 Export All Data (.json)</button>
+    </div>
+    <div class="export-preview" id="export_preview">[ Save data first, then preview will appear here ]</div>
+    <div style="font-size:.72rem;color:#718096;margin-top:6px">Preview of data to be exported (summary only shown above — full data goes into the file)</div>
+  </div>
+
+  <div class="sync-box" style="background:#fff9f0;border-color:#f6ad55">
+    <h3>📥 Import – Load data from a collaborator's export file</h3>
+    <p style="color:#c05621">⚠️ Importing will <strong>replace all current data</strong> on this device with the imported data. Make sure to export your own data first if you have any entries you want to keep.</p>
+    <ul class="sync-steps" style="--step-bg:#c05621">
+      <li>Receive the .json file from your collaborator</li>
+      <li>Click <strong>Choose File</strong> below and select the .json file</li>
+      <li>Click <strong>Import Data</strong> to load it — all 12 cells will be updated</li>
+      <li>Navigate to any cell tab to verify the data has loaded correctly</li>
+    </ul>
+    <div class="btn-row" style="margin-top:14px;align-items:center">
+      <input type="file" id="import_file" accept=".json" style="border:1.5px solid #f6ad55;border-radius:6px;padding:6px 10px;font-size:.82rem;background:#fff"/>
+      <button class="btn-warning" onclick="importData()">📥 Import Data</button>
+    </div>
+    <div id="import_status" class="import-status"></div>
+  </div>
+
+  <div class="sync-box" style="background:#fef5f5;border-color:#feb2b2">
+    <h3>🗑️ Reset All Data</h3>
+    <p style="color:#c53030">Clears all data from this device's browser storage and resets the tool to a blank state. This cannot be undone. Export your data first if needed.</p>
+    <div class="btn-row" style="margin-top:10px">
+      <button class="btn-danger" style="padding:8px 18px;font-size:.82rem" onclick="resetAllData()">🗑️ Reset All Data</button>
+    </div>
+  </div>`;
+}
+
+function refreshExportPreview(){
+  CELLS.forEach(c=>savePanel(c.id));
+  const summary=CELLS.map(c=>{
+    const s=state[c.id];
+    const named=Object.values(s.fixed_names||{}).filter(v=>v.trim()).length;
+    const meetings=(s.meetings||[]).length;
+    return `${c.label}: ${named} names filled, ${meetings} meeting(s)`;
+  }).join('\n');
+  document.getElementById('export_preview').textContent=summary;
+}
+
+function exportData(){
+  CELLS.forEach(c=>savePanel(c.id));
+  const payload={version:'jagm_cells_v4',exported_at:new Date().toISOString(),data:state};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  const d=new Date();
+  a.download=`JAGM_CellsData_${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}.json`;
+  a.click();
+  showToast('Data exported successfully!');
+}
+
+function importData(){
+  const fileInput=document.getElementById('import_file');
+  const statusEl=document.getElementById('import_status');
+  if(!fileInput.files||!fileInput.files[0]){
+    statusEl.className='import-status err';
+    statusEl.textContent='⚠️ Please choose a .json file first.';return;
+  }
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const payload=JSON.parse(e.target.result);
+      if(!payload.data||typeof payload.data!=='object')throw new Error('Invalid file format.');
+      // validate keys
+      const keys=Object.keys(payload.data);
+      const valid=CELLS.every(c=>keys.includes(c.id));
+      if(!valid)throw new Error('File does not contain data for all 12 cells. It may be from a different version.');
+      state=payload.data;
+      // ensure all required fields exist
+      CELLS.forEach(c=>{
+        if(!state[c.id].fixed_names)state[c.id].fixed_names={};
+        if(!state[c.id].extra_members)state[c.id].extra_members=[];
+        if(!state[c.id].date_formed)state[c.id].date_formed='';
+        if(!state[c.id].freq)state[c.id].freq='';
+      });
+      saveState();
+      CELLS.forEach(c=>renderPanel(c.id));
+      updateDownloadMeta();
+      const exportedAt=payload.exported_at?new Date(payload.exported_at).toLocaleString('en-IN'):'unknown time';
+      statusEl.className='import-status ok';
+      statusEl.textContent=`✅ Data imported successfully! Exported at: ${exportedAt}. All 12 cell tabs have been updated. Navigate to any cell tab to verify.`;
+    }catch(err){
+      statusEl.className='import-status err';
+      statusEl.textContent='❌ Import failed: '+err.message;
+    }
+  };
+  reader.readAsText(fileInput.files[0]);
+}
+
+function resetAllData(){
+  if(!confirm('Are you sure you want to reset ALL data? This cannot be undone.\n\nClick OK to confirm reset.'))return;
+  localStorage.removeItem(STORAGE_KEY);
+  state={};
+  loadState();
+  CELLS.forEach(c=>renderPanel(c.id));
+  updateDownloadMeta();
+  document.getElementById('export_preview').textContent='[ No data — tool has been reset ]';
+  showToast('All data has been reset.');
+}
+
+// ── PANEL HTML ─────────────────────────────────────────────────────────────────
 function panelHTML(c){
   const freqOpts=FREQ_OPTIONS.map(f=>`<option value="${f}">${f}</option>`).join('');
   return `
@@ -476,22 +347,15 @@ function panelHTML(c){
       <div class="field"><label>Phone</label><input type="text" id="${c.id}_phone" placeholder="Contact number"/></div>
     </div>
     <div class="row">
-      <div class="field"><label>Cell Objective / Mandate (optional override)</label><textarea id="${c.id}_objective" placeholder="Leave blank to use standard text in downloads…"></textarea></div>
+      <div class="field"><label>Cell Objective / Mandate (optional override)</label><textarea id="${c.id}_objective" placeholder="Leave blank to use standard regulatory text in downloads…"></textarea></div>
     </div>
   </div>
-
   <div class="card">
     <h2>👥 Cell Members</h2>
     <table>
       <thead><tr><th>S.No</th><th>Designation in Cell</th><th>Post / Role Description</th><th>Name of Person</th></tr></thead>
       <tbody id="${c.id}_fixed_body">
-        ${(CELL_MEMBERS[c.id]||[]).map(m=>`
-        <tr class="fixed-row">
-          <td>${m.sno}</td>
-          <td class="desig-cell">${m.desig}</td>
-          <td class="post-cell">${m.post}</td>
-          <td><input class="name-input" type="text" data-key="${c.id}_${m.sno}" placeholder="Enter name…"/></td>
-        </tr>`).join('')}
+        ${(CELL_MEMBERS[c.id]||[]).map(m=>`<tr class="fixed-row"><td>${m.sno}</td><td class="desig-cell">${m.desig}</td><td class="post-cell">${m.post}</td><td><input class="name-input" type="text" data-key="${c.id}_${m.sno}" placeholder="Enter name…"/></td></tr>`).join('')}
       </tbody>
     </table>
     <div class="extra-section">
@@ -500,23 +364,18 @@ function panelHTML(c){
         <thead><tr><th>#</th><th>Name</th><th>Designation</th><th>Role in Cell</th><th class="no-print">Action</th></tr></thead>
         <tbody id="${c.id}_extra_body"></tbody>
       </table>
-      <div class="btn-row" style="margin-top:10px">
-        <button class="btn-primary no-print" onclick="addExtraMember('${c.id}')">+ Add Extra Member</button>
-      </div>
+      <div class="btn-row" style="margin-top:10px"><button class="btn-primary no-print" onclick="addExtraMember('${c.id}')">+ Add Extra Member</button></div>
     </div>
   </div>
-
   <div class="card">
     <h2>🗓️ Meeting Records</h2>
     <div id="${c.id}_meetings_container"></div>
     <div class="btn-row no-print"><button class="btn-primary" onclick="addMeeting('${c.id}')">+ Add Meeting</button></div>
   </div>
-
   <div class="card">
     <h2>📝 Notes &amp; Remarks</h2>
     <textarea class="notes-area" id="${c.id}_notes" placeholder="Add general notes, observations, or remarks..."></textarea>
   </div>
-
   <div class="btn-row no-print" style="padding:0 0 16px 0">
     <button class="btn-primary" onclick="savePanel('${c.id}')">💾 Save</button>
     <button class="btn-success" onclick="downloadMeetingWord('${c.id}')">📄 Download Meeting Records (Word)</button>
@@ -528,16 +387,14 @@ function downloadsHTML(){
   const cards=CELLS.map(c=>`
     <div class="dl-card">
       <h3>${c.full}</h3>
-      <p>Downloads a complete <strong>Cell Constitution & Roles/Responsibilities Document</strong> — includes regulatory basis, objectives, member roster with roles, and a full member attestation sheet with signature rows for every member.</p>
+      <p>Downloads a complete <strong>Cell Constitution & Roles/Responsibilities Document</strong> — includes regulatory basis, objectives, member roster with roles, and a full member attestation sheet.</p>
       <div class="meta" id="dl_meta_${c.id}"><span>Loading…</span></div>
-      <div class="btn-row">
-        <button class="btn-gold" onclick="downloadConstitutionWord('${c.id}')">📄 Download Constitution Document (Word)</button>
-      </div>
+      <div class="btn-row"><button class="btn-gold" onclick="downloadConstitutionWord('${c.id}')">📄 Download Constitution Document (Word)</button></div>
     </div>`).join('');
   return `
   <div class="card">
     <h2>📥 Downloads – Cell Constitution &amp; Roles/Responsibilities Documents</h2>
-    <p style="font-size:.82rem;color:#4a5568;margin-bottom:16px;line-height:1.6">Each document below is auto-generated from the details you have entered in each cell's tab. It includes the <strong>legal/regulatory basis for constitution</strong>, <strong>objectives</strong>, <strong>member roster</strong>, <strong>individual roles & responsibilities</strong>, and a <strong>member attestation sheet</strong> ready for signatures. Fill in member names in each cell tab before downloading.</p>
+    <p style="font-size:.82rem;color:#4a5568;margin-bottom:16px;line-height:1.6">Each document is auto-generated from the details entered in each cell's tab. Fill in member names before downloading.</p>
     <div class="dl-grid">${cards}</div>
   </div>`;
 }
@@ -545,15 +402,14 @@ function downloadsHTML(){
 function updateDownloadMeta(){
   CELLS.forEach(c=>{
     const s=state[c.id];
-    const el=document.getElementById(`dl_meta_${c.id}`);
-    if(!el)return;
-    const members=(CELL_MEMBERS[c.id]||[]).length+(s.extra_members||[]).length;
+    const el=document.getElementById(`dl_meta_${c.id}`);if(!el)return;
+    const total=(CELL_MEMBERS[c.id]||[]).length+(s.extra_members||[]).length;
     const named=Object.values(s.fixed_names||{}).filter(v=>v.trim()).length;
-    el.innerHTML=`<span>Period: ${s.period||'Not set'}</span><span>Formed: ${s.date_formed||'Not set'}</span><span>Members: ${members}</span><span style="background:${named===members?'#c6f6d5':named>0?'#fefcbf':'#fed7d7'};color:${named===members?'#22543d':named>0?'#744210':'#742a2a'}">${named}/${(CELL_MEMBERS[c.id]||[]).length} names filled</span>`;
+    el.innerHTML=`<span>Period: ${s.period||'Not set'}</span><span>Formed: ${s.date_formed||'Not set'}</span><span style="background:${named===total?'#c6f6d5':named>0?'#fefcbf':'#fed7d7'};color:${named===total?'#22543d':named>0?'#744210':'#742a2a'}">${named}/${(CELL_MEMBERS[c.id]||[]).length} names filled</span>`;
   });
 }
 
-// ── SAVE ──────────────────────────────────────────────────────────────────────
+// ── SAVE / RENDER ──────────────────────────────────────────────────────────────
 function savePanel(id){
   const s=state[id];
   ['period','coordinator','coordinator_desig','email','phone','objective','notes','date_formed'].forEach(f=>{
@@ -561,10 +417,7 @@ function savePanel(id){
   });
   const freqEl=document.getElementById(`${id}_freq`);
   const freqCustomEl=document.getElementById(`${id}_freq_custom`);
-  if(freqEl){
-    if(freqEl.value==='custom'&&freqCustomEl) s.freq=freqCustomEl.value;
-    else s.freq=freqEl.value;
-  }
+  if(freqEl){s.freq=(freqEl.value==='custom'&&freqCustomEl)?freqCustomEl.value:freqEl.value;}
   s.fixed_names={};
   document.querySelectorAll(`#${id}_fixed_body .name-input`).forEach(inp=>{s.fixed_names[inp.dataset.key]=inp.value;});
   s.extra_members=[];
@@ -586,10 +439,8 @@ function savePanel(id){
       agenda,decisions,actions,next_meeting:me.querySelector('.m-next').value});
   });
   saveState();
-  updateDownloadMeta();
 }
 
-// ── RENDER ─────────────────────────────────────────────────────────────────────
 function renderPanel(id){
   const s=state[id];
   ['period','coordinator','coordinator_desig','email','phone','objective','notes','date_formed'].forEach(f=>{
@@ -599,11 +450,9 @@ function renderPanel(id){
   if(freqEl){
     const found=FREQ_OPTIONS.includes(s.freq);
     if(found||!s.freq){freqEl.value=s.freq||'';}
-    else{freqEl.value='custom';document.getElementById(`${id}_freq_custom_wrap`).style.display='flex';const fc=document.getElementById(`${id}_freq_custom`);if(fc)fc.value=s.freq;}
+    else{freqEl.value='custom';const w=document.getElementById(`${id}_freq_custom_wrap`);if(w)w.style.display='flex';const fc=document.getElementById(`${id}_freq_custom`);if(fc)fc.value=s.freq;}
     freqEl.addEventListener('change',function(){
-      const wrap=document.getElementById(`${id}_freq_custom_wrap`);
-      if(wrap)wrap.style.display=this.value==='custom'?'flex':'none';
-      savePanel(id);
+      const w=document.getElementById(`${id}_freq_custom_wrap`);if(w)w.style.display=this.value==='custom'?'flex':'none';savePanel(id);
     });
   }
   document.querySelectorAll(`#${id}_fixed_body .name-input`).forEach(inp=>{
@@ -619,21 +468,15 @@ function renderPanel(id){
   });
 }
 
-// ── EXTRA MEMBERS ─────────────────────────────────────────────────────────────
 function addExtraMember(id){addExtraMemberRow(id,{});}
 function addExtraMemberRow(id,data={}){
   const tbody=document.getElementById(`${id}_extra_body`);
   const i=(CELL_MEMBERS[id]||[]).length+tbody.rows.length+1;
   const tr=document.createElement('tr');tr.className='extra-row';
-  tr.innerHTML=`<td>${i}</td>
-    <td><input type="text" value="${esc(data.name||'')}" placeholder="Name" class="name-input" style="width:100%"/></td>
-    <td><input type="text" value="${esc(data.desig||'')}" placeholder="Designation" class="name-input" style="width:100%"/></td>
-    <td><input type="text" value="${esc(data.role||'')}" placeholder="Role in Cell" class="name-input" style="width:100%"/></td>
-    <td class="no-print"><button class="btn-sm btn-danger" onclick="this.closest('tr').remove()">✕</button></td>`;
+  tr.innerHTML=`<td>${i}</td><td><input type="text" value="${esc(data.name||'')}" placeholder="Name" class="name-input" style="width:100%"/></td><td><input type="text" value="${esc(data.desig||'')}" placeholder="Designation" class="name-input" style="width:100%"/></td><td><input type="text" value="${esc(data.role||'')}" placeholder="Role in Cell" class="name-input" style="width:100%"/></td><td class="no-print"><button class="btn-sm btn-danger" onclick="this.closest('tr').remove()">✕</button></td>`;
   tbody.appendChild(tr);
 }
 
-// ── MEETINGS ──────────────────────────────────────────────────────────────────
 let midCtr=0;
 function addMeeting(id){addMeetingEntry(id,{});}
 function addMeetingEntry(id,data={}){
@@ -643,49 +486,35 @@ function addMeetingEntry(id,data={}){
   const agI=(data.agenda&&data.agenda.length?data.agenda:['','']).map(a=>`<li class="agenda-item ag-${mid}"><input type="text" value="${esc(a)}" placeholder="Agenda item"/><button class="btn-tiny no-print" onclick="this.closest('li').remove()">✕</button></li>`).join('');
   const dcI=(data.decisions&&data.decisions.length?data.decisions:['','']).map(d=>`<li class="agenda-item dc-${mid}"><input type="text" value="${esc(d)}" placeholder="Decision"/><button class="btn-tiny no-print" onclick="this.closest('li').remove()">✕</button></li>`).join('');
   const acI=(data.actions&&data.actions.length?data.actions:[{action:'',person:''},{action:'',person:''}]).map(a=>`<tr class="ac-${mid}"><td><input type="text" value="${esc(a.action||'')}" placeholder="Action point" style="width:100%;border:1px solid #cbd5e0;border-radius:4px;padding:4px"/></td><td><input type="text" value="${esc(a.person||'')}" placeholder="Responsible person" style="width:100%;border:1px solid #cbd5e0;border-radius:4px;padding:4px"/></td><td class="no-print"><button class="btn-tiny" onclick="this.closest('tr').remove()">✕</button></td></tr>`).join('');
-  div.innerHTML=`
-    <h4>Meeting Record – ${data.date||'New Meeting'}</h4>
+  div.innerHTML=`<h4>Meeting Record – ${data.date||'New Meeting'}</h4>
     <button class="btn-sm btn-danger remove-meeting no-print" onclick="this.closest('.meeting-entry').remove()">✕ Remove</button>
     <div class="row">
       <div class="field"><label>Date</label><input type="date" class="m-date" value="${esc(data.date||'')}"/></div>
       <div class="field"><label>Time</label><input type="time" class="m-time" value="${esc(data.time||'')}"/></div>
       <div class="field"><label>Venue</label><input type="text" class="m-venue" value="${esc(data.venue||'')}" placeholder="Room / Hall name"/></div>
     </div>
-    <div class="row"><div class="field"><label>Members Present (Name – Designation, one per line)</label>
-      <textarea class="m-members" placeholder="Dr. Name – Designation">${esc(data.members_present||'')}</textarea></div></div>
-    <h3>Agenda Items</h3>
-    <ul class="agenda-list" id="ag_${mid}">${agI}</ul>
+    <div class="row"><div class="field"><label>Members Present (Name – Designation, one per line)</label><textarea class="m-members" placeholder="Dr. Name – Designation">${esc(data.members_present||'')}</textarea></div></div>
+    <h3>Agenda Items</h3><ul class="agenda-list" id="ag_${mid}">${agI}</ul>
     <button class="btn-tiny no-print" onclick="addListItem('ag_${mid}','ag-${mid}','Agenda item')" style="margin-top:4px">+ Add Item</button>
-    <h3>Decisions Taken</h3>
-    <ul class="agenda-list" id="dc_${mid}">${dcI}</ul>
+    <h3>Decisions Taken</h3><ul class="agenda-list" id="dc_${mid}">${dcI}</ul>
     <button class="btn-tiny no-print" onclick="addListItem('dc_${mid}','dc-${mid}','Decision')" style="margin-top:4px">+ Add Decision</button>
     <h3>Action Points</h3>
-    <table style="margin-top:6px">
-      <thead><tr><th>Action Point</th><th>Responsible Person</th><th class="no-print"></th></tr></thead>
-      <tbody id="ac_${mid}">${acI}</tbody>
-    </table>
+    <table style="margin-top:6px"><thead><tr><th>Action Point</th><th>Responsible Person</th><th class="no-print"></th></tr></thead><tbody id="ac_${mid}">${acI}</tbody></table>
     <button class="btn-tiny no-print" onclick="addActionRow('ac_${mid}','ac-${mid}')" style="margin-top:4px">+ Add Action</button>
-    <div class="row" style="margin-top:12px">
-      <div class="field"><label>Next Meeting Date</label><input type="date" class="m-next" value="${esc(data.next_meeting||'')}"/></div>
-    </div>
-    <div class="sig-block">
-      <h3>Attestation</h3>
-      <div class="sig-row">
-        <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Cell Coordinator<br/>Signature &amp; Date</div></div>
-        <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Principal<br/>Signature &amp; Date</div></div>
-        <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 1<br/>Signature</div></div>
-        <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 2<br/>Signature</div></div>
-        <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 3<br/>Signature</div></div>
-      </div>
-    </div>`;
+    <div class="row" style="margin-top:12px"><div class="field"><label>Next Meeting Date</label><input type="date" class="m-next" value="${esc(data.next_meeting||'')}"/></div></div>
+    <div class="sig-block"><h3>Attestation</h3><div class="sig-row">
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Cell Coordinator<br/>Signature &amp; Date</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Principal<br/>Signature &amp; Date</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 1<br/>Signature</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 2<br/>Signature</div></div>
+      <div class="sig-field"><div class="sig-line"></div><div class="sig-label">Member 3<br/>Signature</div></div>
+    </div></div>`;
   container.appendChild(div);
   div.querySelector('.m-date').addEventListener('change',function(){div.querySelector('h4').textContent='Meeting Record – '+this.value;});
 }
 function addListItem(listId,cls,ph){
-  const ul=document.getElementById(listId);const li=document.createElement('li');
-  li.className='agenda-item '+cls;
-  li.innerHTML=`<input type="text" placeholder="${ph}"/><button class="btn-tiny no-print" onclick="this.closest('li').remove()">✕</button>`;
-  ul.appendChild(li);
+  const ul=document.getElementById(listId);const li=document.createElement('li');li.className='agenda-item '+cls;
+  li.innerHTML=`<input type="text" placeholder="${ph}"/><button class="btn-tiny no-print" onclick="this.closest('li').remove()">✕</button>`;ul.appendChild(li);
 }
 function addActionRow(tbodyId,cls){
   const tb=document.getElementById(tbodyId);const tr=document.createElement('tr');tr.className=cls;
@@ -694,56 +523,31 @@ function addActionRow(tbodyId,cls){
 }
 function printPanel(id){savePanel(id);switchTab(id);setTimeout(()=>window.print(),300);}
 
-// ── WORD HELPERS ───────────────────────────────────────────────────────────────
+// ── DOCX HELPERS ───────────────────────────────────────────────────────────────
 function getDocxHelpers(){
-  const {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,HeadingLevel,AlignmentType,BorderStyle,WidthType,ShadingType}=docx;
+  const {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,HeadingLevel,AlignmentType,BorderStyle,WidthType}=docx;
   const bdr={style:BorderStyle.SINGLE,size:4,color:'1a3a5c'};
-  const bdrLight={style:BorderStyle.SINGLE,size:2,color:'cbd5e0'};
-  const mkTR=(txt,bold,shade,borders)=>new TableRow({children:[new TableCell({
-    children:[new Paragraph({children:[new TextRun({text:txt||'',size:20,bold:!!bold})],spacing:{after:40,before:40}})],
-    shading:{fill:shade||'FFFFFF'},
-    borders:borders||{top:bdr,bottom:bdr,left:bdr,right:bdr},
-    margins:{top:60,bottom:60,left:100,right:100}
-  })]});
-  const mkCell=(txt,bold,shade,span)=>new TableCell({
-    children:[new Paragraph({children:[new TextRun({text:txt||'—',size:20,bold:!!bold})],spacing:{after:40,before:40}})],
-    shading:{fill:shade||'FFFFFF'},
-    borders:{top:bdr,bottom:bdr,left:bdr,right:bdr},
-    margins:{top:60,bottom:60,left:100,right:100},
-    ...(span?{columnSpan:span}:{})
-  });
-  const mkPara=(text,opts={})=>new Paragraph({
-    alignment:opts.align||AlignmentType.LEFT,
-    children:[new TextRun({text:text||'',size:opts.size||22,bold:!!opts.bold,color:opts.color||'000000',italics:!!opts.italic})],
-    spacing:{after:opts.after||80,before:opts.before||0},
-    ...(opts.heading?{heading:opts.heading}:{})
-  });
-  return {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,HeadingLevel,AlignmentType,BorderStyle,WidthType,bdr,bdrLight,mkCell,mkPara,mkTR};
+  const mkCell=(txt,bold,shade)=>new TableCell({children:[new Paragraph({children:[new TextRun({text:txt||'—',size:20,bold:!!bold})],spacing:{after:40,before:40}})],shading:{fill:shade||'FFFFFF'},borders:{top:bdr,bottom:bdr,left:bdr,right:bdr},margins:{top:60,bottom:60,left:100,right:100}});
+  const mkPara=(text,opts={})=>new Paragraph({alignment:opts.align||AlignmentType.LEFT,children:[new TextRun({text:text||'',size:opts.size||22,bold:!!opts.bold,color:opts.color||'000000',italics:!!opts.italic})],spacing:{after:opts.after||80,before:opts.before||0}});
+  return {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,AlignmentType,BorderStyle,WidthType,bdr,mkCell,mkPara};
 }
 
-// ── MEETING RECORDS WORD ───────────────────────────────────────────────────────
 async function downloadMeetingWord(id){
   savePanel(id);
   const s=state[id];const cell=CELLS.find(c=>c.id===id);
-  const {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,AlignmentType,BorderStyle,WidthType,bdr,mkCell,mkPara}=getDocxHelpers();
+  const {Document,Packer,Paragraph,Table,TableRow,AlignmentType,WidthType,mkCell,mkPara}=getDocxHelpers();
   const fixed=CELL_MEMBERS[id]||[];
   const children=[
     mkPara('Jain AGM Ayurvedic Medical College & Hospital, Varur',{bold:true,size:28,align:AlignmentType.CENTER,after:80}),
     mkPara(cell.full,{bold:true,size:24,color:'1a3a5c',align:AlignmentType.CENTER,after:80}),
     mkPara(`Academic Period: ${s.period||'—'}   |   Date of Formation: ${s.date_formed||'—'}   |   Meeting Frequency: ${s.freq||'—'}`,{size:20,align:AlignmentType.CENTER,after:200}),
-    mkPara('Cell Details',{bold:true,size:24,after:80}),
-    ...['Coordinator','coordinator_desig','email','phone'].map((f,i)=>mkPara(['Coordinator: '+s.coordinator,'Designation: '+s.coordinator_desig,'Email: '+s.email,'Phone: '+s.phone][i])),
-    mkPara(''),
-    mkPara('Cell Members',{bold:true,size:24,after:80}),
-    new Table({
-      width:{size:100,type:WidthType.PERCENTAGE},
-      rows:[
-        new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Designation',true,'1a3a5c'),mkCell('Post',true,'1a3a5c'),mkCell('Name of Person',true,'1a3a5c')]}),
-        ...fixed.map(m=>new TableRow({children:[mkCell(String(m.sno),'','EBF4FF'),mkCell(m.desig,true,'EBF4FF'),mkCell(m.post,'','F7FAFC'),mkCell(s.fixed_names[`${id}_${m.sno}`]||'—')]})),
-        ...(s.extra_members||[]).map((m,i)=>new TableRow({children:[mkCell(String(fixed.length+i+1)),mkCell(m.name),mkCell(m.desig),mkCell(m.role)]}))
-      ]
-    }),
-    mkPara('',{after:200}),
+    mkPara('Cell Members',{bold:true,size:22,after:80}),
+    new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
+      new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Designation',true,'1a3a5c'),mkCell('Post',true,'1a3a5c'),mkCell('Name',true,'1a3a5c')]}),
+      ...fixed.map(m=>new TableRow({children:[mkCell(String(m.sno),'','EBF4FF'),mkCell(m.desig,true,'EBF4FF'),mkCell(m.post,'','F7FAFC'),mkCell(s.fixed_names[`${id}_${m.sno}`]||'—')]})),
+      ...(s.extra_members||[]).map((m,i)=>new TableRow({children:[mkCell(String(fixed.length+i+1)),mkCell(m.name),mkCell(m.desig),mkCell(m.role)]}))
+    ]}),
+    mkPara('',{after:160}),
     mkPara('Meeting Records',{bold:true,size:24,after:80}),
   ];
   if(!s.meetings||!s.meetings.length){children.push(mkPara('No meetings recorded.'));}
@@ -768,9 +572,7 @@ async function downloadMeetingWord(id){
       }
       children.push(mkPara(`Next Meeting Date: ${m.next_meeting||'—'}`));
       children.push(mkPara('',{after:160}));
-      children.push(new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
-        new TableRow({children:[mkCell('Cell Coordinator\n\n\nSignature & Date','','F7FAFC'),mkCell('Principal\n\n\nSignature & Date','','F7FAFC'),mkCell('Member 1\n\n\nSignature','','F7FAFC'),mkCell('Member 2\n\n\nSignature','','F7FAFC'),mkCell('Member 3\n\n\nSignature','','F7FAFC')]})
-      ]}));
+      children.push(new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[new TableRow({children:[mkCell('Cell Coordinator\n\n\nSignature & Date','','F7FAFC'),mkCell('Principal\n\n\nSignature & Date','','F7FAFC'),mkCell('Member 1\n\n\nSignature','','F7FAFC'),mkCell('Member 2\n\n\nSignature','','F7FAFC'),mkCell('Member 3\n\n\nSignature','','F7FAFC')]})]}));
       children.push(mkPara('',{after:240}));
     });
   }
@@ -778,90 +580,60 @@ async function downloadMeetingWord(id){
   const blob=await Packer.toBlob(doc);
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
   a.download=`${cell.full.replace(/[^a-z0-9]/gi,'_')}_MeetingRecords_${s.period||'Report'}.docx`;a.click();
-  showToast('Meeting records Word file downloaded!');
+  showToast('Meeting records downloaded!');
 }
 
-// ── CONSTITUTION DOCUMENT WORD ────────────────────────────────────────────────
 async function downloadConstitutionWord(id){
   CELLS.forEach(c=>savePanel(c.id));
   const s=state[id];const cell=CELLS.find(c=>c.id===id);
   const info=CELL_INFO[id]||{basis:'Constituted as per NCISM Regulations 2021.',freq_default:'',roles:{}};
-  const {Document,Packer,Paragraph,Table,TableRow,TableCell,TextRun,AlignmentType,WidthType,bdr,mkCell,mkPara}=getDocxHelpers();
+  const {Document,Packer,Paragraph,Table,TableRow,AlignmentType,WidthType,mkCell,mkPara}=getDocxHelpers();
   const fixed=CELL_MEMBERS[id]||[];
-
-  // Build all members list (fixed + extra)
   const allMembers=[
-    ...fixed.map(m=>({sno:m.sno,desig:m.desig,post:m.post,name:s.fixed_names[`${id}_${m.sno}`]||'',roles:info.roles[m.desig]||info.roles[m.post]||''})),
+    ...fixed.map(m=>({sno:m.sno,desig:m.desig,post:m.post,name:s.fixed_names[`${id}_${m.sno}`]||'',roles:info.roles[m.desig]||info.roles[m.post]||'As assigned by the Chairperson.'})),
     ...(s.extra_members||[]).map((m,i)=>({sno:fixed.length+i+1,desig:m.desig||m.role,post:m.desig,name:m.name,roles:'As assigned by the Chairperson.'}))
   ];
-
   const children=[
     mkPara('Jain AGM Ayurvedic Medical College & Hospital, Varur',{bold:true,size:28,align:AlignmentType.CENTER,after:80}),
     mkPara('Affiliated to Rajiv Gandhi University of Health Sciences, Karnataka',{size:20,align:AlignmentType.CENTER,after:60}),
     mkPara('Approved by NCISM, Ministry of AYUSH, Government of India',{size:20,align:AlignmentType.CENTER,after:200}),
-    mkPara('─'.repeat(80),{size:16,align:AlignmentType.CENTER,after:200}),
     mkPara(cell.full.toUpperCase(),{bold:true,size:32,align:AlignmentType.CENTER,color:'1a3a5c',after:120}),
-    mkPara('CELL CONSTITUTION, OBJECTIVES & ROLES AND RESPONSIBILITIES',{bold:true,size:22,align:AlignmentType.CENTER,color:'2d6a9f',after:80}),
-    mkPara('─'.repeat(80),{size:16,align:AlignmentType.CENTER,after:200}),
+    mkPara('CELL CONSTITUTION, OBJECTIVES & ROLES AND RESPONSIBILITIES',{bold:true,size:22,align:AlignmentType.CENTER,color:'2d6a9f',after:200}),
     new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
       new TableRow({children:[mkCell('Academic Period',true,'EBF4FF'),mkCell(s.period||'—','','FFFFFF'),mkCell('Date of Formation',true,'EBF4FF'),mkCell(s.date_formed||'—','','FFFFFF')]}),
-      new TableRow({children:[mkCell('Meeting Frequency',true,'EBF4FF'),mkCell(s.freq||info.freq_default||'—','','FFFFFF'),mkCell('Cell Coordinator',true,'EBF4FF'),mkCell(s.coordinator?`${s.coordinator} (${s.coordinator_desig||''})`.trim():'—','','FFFFFF')]}),
+      new TableRow({children:[mkCell('Meeting Frequency',true,'EBF4FF'),mkCell(s.freq||info.freq_default||'—','','FFFFFF'),mkCell('Cell Coordinator',true,'EBF4FF'),mkCell(s.coordinator?`${s.coordinator} (${s.coordinator_desig||''})`.trim():'—','','FFFFFF')]})
     ]}),
     mkPara('',{after:200}),
-
     mkPara('SECTION 1: REGULATORY BASIS & MANDATE FOR CONSTITUTION',{bold:true,size:24,color:'1a3a5c',after:120}),
     mkPara(info.basis,{size:21,after:160}),
-
     mkPara('SECTION 2: OBJECTIVES',{bold:true,size:24,color:'1a3a5c',after:120}),
     mkPara(s.objective||getDefaultObjective(id),{size:21,after:160}),
-
     mkPara('SECTION 3: COMPOSITION OF THE CELL',{bold:true,size:24,color:'1a3a5c',after:120}),
-    new Table({
-      width:{size:100,type:WidthType.PERCENTAGE},
-      rows:[
-        new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Designation in Cell',true,'1a3a5c'),mkCell('Post / Role Description',true,'1a3a5c'),mkCell('Name of Person',true,'1a3a5c')]}),
-        ...allMembers.map(m=>new TableRow({children:[mkCell(String(m.sno),'','EBF4FF'),mkCell(m.desig,true,'EBF4FF'),mkCell(m.post,'','F7FAFC'),mkCell(m.name||'[To be filled]')]}))
-      ]
-    }),
+    new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
+      new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Designation in Cell',true,'1a3a5c'),mkCell('Post / Role Description',true,'1a3a5c'),mkCell('Name of Person',true,'1a3a5c')]}),
+      ...allMembers.map(m=>new TableRow({children:[mkCell(String(m.sno),'','EBF4FF'),mkCell(m.desig,true,'EBF4FF'),mkCell(m.post,'','F7FAFC'),mkCell(m.name||'[To be filled]')]}))
+    ]}),
     mkPara('',{after:200}),
-
     mkPara('SECTION 4: ROLES AND RESPONSIBILITIES OF EACH MEMBER',{bold:true,size:24,color:'1a3a5c',after:120}),
     ...allMembers.flatMap(m=>[
       mkPara(`${m.sno}. ${m.desig}${m.name?' – '+m.name:''}`,{bold:true,size:22,color:'2d6a9f',after:60}),
-      mkPara(m.roles||'Roles and responsibilities as assigned by the Chairperson and as per applicable regulations.',{size:21,after:140}),
+      mkPara(m.roles,{size:21,after:140}),
     ]),
-
     mkPara('SECTION 5: GENERAL PROVISIONS',{bold:true,size:24,color:'1a3a5c',after:120}),
-    ...generalProvisions(id).map(p=>mkPara(p,{size:21,after:80})),
+    ...['1. Quorum: A majority of members (more than 50%) shall constitute a quorum for any meeting of the cell.','2. Minutes: Minutes of all meetings shall be recorded, confirmed, and maintained in a dedicated register.','3. Confidentiality: Members shall maintain strict confidentiality of all proceedings, complaints, and personal information dealt with by the cell.','4. Term: The term of the cell members shall be one academic year, renewable by the Principal.','5. Amendment: The Principal, in consultation with the cell coordinator, may amend the composition or terms of reference of the cell in accordance with applicable regulations.','6. Compliance: All members shall comply with applicable NCISM Regulations, UGC Guidelines, Supreme Court directives, and other statutory provisions relevant to this cell.','7. Report: The cell shall submit an annual report of its activities to the Principal and, where required, to the affiliating university and NCISM.'].map(p=>mkPara(p,{size:21,after:80})),
     mkPara('',{after:200}),
-
     mkPara('SECTION 6: MEMBER ACKNOWLEDGEMENT & ATTESTATION',{bold:true,size:24,color:'1a3a5c',after:120}),
     mkPara('We, the undersigned members of the '+cell.full+', Jain AGM Ayurvedic Medical College & Hospital, Varur, hereby acknowledge that we have read, understood, and accept the roles and responsibilities assigned to us as detailed in this document. We commit to fulfilling our duties diligently and in accordance with the applicable regulatory provisions.',{size:21,after:160}),
-    new Table({
-      width:{size:100,type:WidthType.PERCENTAGE},
-      rows:[
-        new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Name',true,'1a3a5c'),mkCell('Designation',true,'1a3a5c'),mkCell('Signature',true,'1a3a5c'),mkCell('Date',true,'1a3a5c')]}),
-        ...allMembers.map(m=>new TableRow({children:[
-          mkCell(String(m.sno),'','EBF4FF'),
-          mkCell(m.name||'[Name]'),
-          mkCell(m.desig),
-          mkCell('','','FAFAFA'),
-          mkCell('','','FAFAFA'),
-        ]}))
-      ]
-    }),
+    new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
+      new TableRow({children:[mkCell('S.No',true,'1a3a5c'),mkCell('Name',true,'1a3a5c'),mkCell('Designation',true,'1a3a5c'),mkCell('Signature',true,'1a3a5c'),mkCell('Date',true,'1a3a5c')]}),
+      ...allMembers.map(m=>new TableRow({children:[mkCell(String(m.sno),'','EBF4FF'),mkCell(m.name||'[Name]'),mkCell(m.desig),mkCell('','','FAFAFA'),mkCell('','','FAFAFA')]}))
+    ]}),
     mkPara('',{after:200}),
     mkPara('Certified by:',{bold:true,size:22,after:160}),
-    new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[
-      new TableRow({children:[
-        mkCell('Cell Coordinator\nName: _______________________\n\n\nSignature & Date','','F7FAFC'),
-        mkCell('Principal\nJain AGM AMC & Hospital, Varur\n\n\nSignature, Seal & Date','','F7FAFC'),
-      ]})
-    ]}),
+    new Table({width:{size:100,type:WidthType.PERCENTAGE},rows:[new TableRow({children:[mkCell('Cell Coordinator\nName: _______________________\n\n\nSignature & Date','','F7FAFC'),mkCell('Principal\nJain AGM AMC & Hospital, Varur\n\n\nSignature, Seal & Date','','F7FAFC')]})]}),
     mkPara('',{after:80}),
-    mkPara('Document prepared in accordance with NCISM Regulations 2021 and applicable statutory provisions.',{size:18,italic:true,color:'718096',align:AlignmentType.CENTER,after:40}),
+    mkPara('Document prepared in accordance with NCISM Regulations 2021 and applicable statutory provisions.',{size:18,italic:true,color:'718096',align:AlignmentType.CENTER}),
   ];
-
   const doc=new Document({sections:[{properties:{},children}]});
   const blob=await Packer.toBlob(doc);
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
@@ -870,38 +642,12 @@ async function downloadConstitutionWord(id){
 }
 
 function getDefaultObjective(id){
-  const obj={
-    anti_ragging:'To ensure a safe, ragging-free campus environment; to receive, investigate, and resolve ragging complaints in a time-bound and fair manner; to conduct regular sensitisation programmes for students, faculty, and staff; and to ensure full compliance with Supreme Court directives and UGC Anti-Ragging Regulations.',
-    icc:'To provide a safe, dignified, and harassment-free working and learning environment for all women; to receive and investigate complaints of sexual harassment in a fair, confidential, and time-bound manner; and to implement preventive and awareness measures as mandated under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.',
-    sc_st:'To ensure equal opportunity and non-discrimination for students belonging to Scheduled Castes and Scheduled Tribes; to address grievances related to caste-based discrimination; to facilitate welfare schemes, scholarships, and support services; and to create a sensitised and inclusive campus environment.',
-    grievance:'To provide a fair, transparent, and time-bound mechanism for redressal of student grievances related to academics, examinations, admissions, hostel, and other institutional matters; to ensure that no student suffers on account of raising a legitimate grievance; and to maintain a constructive student-institution relationship.',
-    alumni:'To maintain an active, engaged alumni network; to leverage alumni expertise for student mentorship, curriculum enrichment, and institutional development; to organise regular alumni interactions and facilitate professional networking among graduates and current students.',
-    entrepreneurship:'To develop entrepreneurial mindset and career readiness among Ayurveda graduates; to provide career guidance, placement support, and industry linkages; to promote self-employment and innovation in the AYUSH sector; and to facilitate skill development programmes aligned with National Education Policy 2020.',
-    ethics:'To ensure ethical conduct of all research involving human participants, animals, and biological materials at the institution; to review and approve research protocols; to protect the rights and welfare of research participants; and to ensure compliance with ICMR Guidelines and applicable laws.',
-    hospital_mgmt:'To ensure quality patient care, efficient administration, and regulatory compliance of the teaching hospital; to plan and monitor hospital development; to review hospital statistics and implement quality improvement measures; and to ensure that the hospital meets NCISM standards for a teaching hospital.',
-    research:'To promote a culture of evidence-based Ayurveda research; to facilitate and oversee PG thesis research; to coordinate with the IEC and funding agencies; to organise research capacity building programmes; and to ensure research quality and ethical standards across all institutional research activities.',
-    sports_cultural:'To promote physical fitness, teamwork, and holistic personality development through sports; to preserve and promote Indian cultural traditions through cultural activities; to encourage participation in inter-college and inter-university events; and to provide a platform for students to develop talents beyond academics.',
-    library:'To ensure that the library collection, services, and infrastructure meet NCISM minimum standards; to support teaching, learning, and research through adequate information resources; to promote digital literacy and research skills; and to implement efficient library management systems.',
-    examination:'To ensure fair, transparent, and systematic conduct of internal assessments and University examinations; to implement the NCISM Assessment Blueprint; to maintain examination integrity and confidentiality; and to ensure full compliance with RGUHS examination regulations and notifications.',
-  };
+  const obj={anti_ragging:'To ensure a safe, ragging-free campus environment; to receive, investigate, and resolve ragging complaints in a time-bound and fair manner; to conduct regular sensitisation programmes for students, faculty, and staff; and to ensure full compliance with Supreme Court directives and UGC Anti-Ragging Regulations.',icc:'To provide a safe, dignified, and harassment-free working and learning environment for all women; to receive and investigate complaints of sexual harassment in a fair, confidential, and time-bound manner; and to implement preventive and awareness measures as mandated under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.',sc_st:'To ensure equal opportunity and non-discrimination for students belonging to Scheduled Castes and Scheduled Tribes; to address grievances related to caste-based discrimination; to facilitate welfare schemes, scholarships, and support services; and to create a sensitised and inclusive campus environment.',grievance:'To provide a fair, transparent, and time-bound mechanism for redressal of student grievances related to academics, examinations, admissions, hostel, and other institutional matters; to ensure that no student suffers on account of raising a legitimate grievance; and to maintain a constructive student-institution relationship.',alumni:'To maintain an active, engaged alumni network; to leverage alumni expertise for student mentorship, curriculum enrichment, and institutional development; to organise regular alumni interactions and facilitate professional networking among graduates and current students.',entrepreneurship:'To develop entrepreneurial mindset and career readiness among Ayurveda graduates; to provide career guidance, placement support, and industry linkages; to promote self-employment and innovation in the AYUSH sector; and to facilitate skill development programmes aligned with National Education Policy 2020.',ethics:'To ensure ethical conduct of all research involving human participants, animals, and biological materials at the institution; to review and approve research protocols; to protect the rights and welfare of research participants; and to ensure compliance with ICMR Guidelines and applicable laws.',hospital_mgmt:'To ensure quality patient care, efficient administration, and regulatory compliance of the teaching hospital; to plan and monitor hospital development; to review hospital statistics and implement quality improvement measures; and to ensure that the hospital meets NCISM standards for a teaching hospital.',research:'To promote a culture of evidence-based Ayurveda research; to facilitate and oversee PG thesis research; to coordinate with the IEC and funding agencies; to organise research capacity building programmes; and to ensure research quality and ethical standards across all institutional research activities.',sports_cultural:'To promote physical fitness, teamwork, and holistic personality development through sports; to preserve and promote Indian cultural traditions through cultural activities; to encourage participation in inter-college and inter-university events; and to provide a platform for students to develop talents beyond academics.',library:'To ensure that the library collection, services, and infrastructure meet NCISM minimum standards; to support teaching, learning, and research through adequate information resources; to promote digital literacy and research skills; and to implement efficient library management systems.',examination:'To ensure fair, transparent, and systematic conduct of internal assessments and University examinations; to implement the NCISM Assessment Blueprint; to maintain examination integrity and confidentiality; and to ensure full compliance with RGUHS examination regulations and notifications.'};
   return obj[id]||'As per NCISM Regulations 2021 and applicable statutory provisions.';
-}
-
-function generalProvisions(id){
-  return [
-    '1. Quorum: A majority of members (more than 50%) shall constitute a quorum for any meeting of the cell.',
-    '2. Minutes: Minutes of all meetings shall be recorded, confirmed, and maintained in a dedicated register.',
-    '3. Confidentiality: Members shall maintain strict confidentiality of all proceedings, complaints, and personal information dealt with by the cell.',
-    '4. Term: The term of the cell members shall be one academic year, renewable by the Principal.',
-    '5. Amendment: The Principal, in consultation with the cell coordinator, may amend the composition or terms of reference of the cell in accordance with applicable regulations.',
-    '6. Compliance: All members shall comply with the applicable NCISM Regulations, UGC Guidelines, Supreme Court directives, and other statutory provisions relevant to this cell.',
-    '7. Report: The cell shall submit an annual report of its activities to the Principal and, where required, to the affiliating university and NCISM.',
-  ];
 }
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
 loadState();buildTabs();buildPanels();
 CELLS.forEach(c=>renderPanel(c.id));
 updateDownloadMeta();
